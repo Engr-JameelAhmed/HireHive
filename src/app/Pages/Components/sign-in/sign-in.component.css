@@ -1,0 +1,114 @@
+/* Apply styles to the background container */
+.background-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Use a pseudo-element to add the background image with reduced opacity */
+.background-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/meeting.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.7; /* Adjust opacity as needed */
+  z-index: -1; /* Ensure the image is behind the content */
+}
+
+/* Main container for login content */
+#login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+}
+
+/* Positioning for animations */
+#login-animations {
+  width: 40%;
+  height: 60%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+/* Styling for the form container */
+.form-container {
+  width: 360px;
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.5); /* Slightly opaque white background */
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling for p-card */
+.p-card {
+  border-radius: 12px; /* Ensure rounded corners */
+  padding: 0; /* Remove default padding */
+}
+
+/* Styling for form fields */
+.field {
+  margin-bottom: 1rem;
+}
+
+.field label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #007bff; /* Bootstrap primary color */
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+}
+
+/* Error message styling */
+small.p-error {
+  color: #dc3545; /* Bootstrap danger color */
+  font-size: 0.875rem;
+}
+
+/* Button styling */
+p-button {
+  margin-top: 1rem;
+}
+
+/* Margin for links and other elements */
+.mt-2 {
+  margin-top: 1rem;
+}
+
+a {
+  color: #007bff; /* Bootstrap primary color */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,22 @@
+.collapse{
+  margin-right: 180px;
+  padding: 10px;
+  cursor: pointer;
+}
+.navbar-brand{
+  color: brown;
+  font-size: 25px;
+  margin-left: 100px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+}
+ .signUp{
+  border: 2px solid blue;
+  border-radius: 5px;
+  width: 90px;
+  text-align: center;
+
+}
+.signUp a {
+  color: blue;
+}
