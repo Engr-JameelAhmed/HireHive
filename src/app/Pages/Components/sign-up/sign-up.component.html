@@ -1,12 +1,9 @@
-
-
-
 <div id="login-container">
   <div class="background-container"></div>
   <div id="signup-animations"></div>
   <div class="form-container">
     <form [formGroup]="SignUpForm" (ngSubmit)="submitDetails()">
-      <p-card header="Sign Up" class="p-card">
+      <p-card [header]="'Sign Up ' + selectedRole" class="p-card">
         <div class="field">
           <label for="fullName">FullName</label>
           <input type="text" pInputText formControlName="fullName" class="w-full" name="fullName" placeholder="Enter Your FullName"/>
@@ -62,7 +59,7 @@
         </div>
         <p-button label="Register" styleClass="w-full" [disabled]="SignUpForm.invalid" type="submit"></p-button>
         <div class="mt-2">
-          Already a member ? <a routerLink="/login">SIGN IN</a>
+          Already a member ? <a routerLink="/sign-in">Login</a>
       </div>
       </p-card>
     </form>

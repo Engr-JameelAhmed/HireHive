@@ -1,0 +1,155 @@
+.uper-region{
+  margin: 40px;
+  padding: 40px;
+  margin-left: 180px;
+}
+.uper-region h1{
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 45px;
+}
+.uper-region p{
+  font-size: 25px;
+  width: 40%;
+  line-height: 1.5;
+}
+.below-region{
+  display: flex;
+  justify-content: space-evenly;
+}
+.card-1{
+  background-color:rgb(232, 239, 239);
+  border-radius: 15px;
+  width: 500px;
+  padding: 15px;
+  height: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 25px;
+  box-sizing: border-box;
+}
+.card-1 h3{
+  font-size: 20px;
+
+}
+.card-2 h3{
+  font-size: 20px;
+}
+
+.card-2{
+  background-color:rgb(232, 239, 239);
+  border-radius: 15px;
+  width: 500px;
+  padding: 15px;
+  height: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 25px;
+}
+.animation {
+  width: 100%; /* Or a specific width */
+  height: 100px; /* Or a specific height */
+  overflow: hidden; /* To prevent overflow */
+  position: relative; /* To position it correctly inside .card-1 */
+}
+
+
+@media only screen and (max-width: 1000px){
+
+  .card-1{
+    width: 400px;
+    padding: 15px;
+    height: 200px;
+    line-height: 20px;
+  }
+
+  .card-2{
+    width: 400px;
+    padding: 15px;
+    height: 200px;
+    line-height: 20px;
+  }
+}
+
+@media only screen and (max-width: 800px){
+
+  .card-1{
+    width: 300px;
+    padding: 15px;
+    height: 200px;
+    line-height: 20px;
+  }
+
+  .card-2{
+    width: 300px;
+    padding: 15px;
+    height: 200px;
+    line-height: 20px;
+  }
+}
+
+@media only screen and (max-width: 650px){
+  .uper-region{
+    margin: 40px;
+    padding: 40px;
+  }
+  .uper-region h1{
+    font-size: 50px;
+    margin-bottom: 25px;
+  }
+  .uper-region p{
+    font-size: 20px;
+    width: 70%;
+  }
+
+  .below-region{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    justify-content: space-evenly;
+  }
+
+  .card-1{
+    width: 350px;
+    padding: 25px;
+    height: 250px;
+    line-height: 20px;
+  }
+
+  .card-2{
+    width: 350px;
+    padding: 25px;
+    height: 250px;
+    line-height: 20px;
+    margin-bottom: 50px;
+  }
+}
+@media only screen and (max-width: 455px){
+  .uper-region{
+    margin: 30px;
+    padding: 30px;
+  }
+  .uper-region h1{
+    font-size: 40px;
+    margin-bottom: 25px;
+  }
+  .uper-region p{
+    font-size: 15px;
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 355px){
+  .uper-region{
+    margin: 20px;
+    padding: 20px;
+  }
+
+}

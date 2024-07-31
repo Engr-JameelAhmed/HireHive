@@ -112,3 +112,41 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+@media only screen and (max-width: 500px){
+
+  .form-container {
+    width: 360px;
+    padding: 0px;
+  }
+
+}
+@media only screen and (max-width: 420px){
+
+  .form-container {
+    width: 320px;
+    padding: 0px;
+  }
+
+}
+
+@media only screen and (max-width: 360px){
+  .form-container {
+    width: 300px;
+    right: 7%;
+    transform: translateY(-60%);
+    padding: 0px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+}
+@media only screen and (max-width: 330px){
+  .form-container {
+    width: 280px;
+    right: 5%;
+    transform: translateY(-60%);
+    padding: 0px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+}

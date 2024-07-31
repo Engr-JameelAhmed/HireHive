@@ -1,0 +1,49 @@
+.join {
+  background-color: #f9f8fd;
+}
+
+.tag h1 {
+  padding-top: 120px;
+  text-align: center;
+  margin-bottom: -100px;
+}
+
+.sites {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 150px;
+  scale: 0.6;
+}
+
+.animation-container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+
+
+.animation-container p {
+  margin-top: 20px;
+  font-size: 46px;
+}
+
+@media only screen and (max-width: 400px) {
+  .tag h1 {
+    font-size: 25px;
+    color: red;
+    margin-bottom: 5px;
+  }
+
+  .sites {
+    flex-direction: column;
+    align-items: center;
+    scale: 0.9;
+  }
+
+  .animation-container {
+    margin: 10px 0;
+  }
+}

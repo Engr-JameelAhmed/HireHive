@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { passwordMatchValidator } from 'src/app/shared/password-match.directive';
 
 
@@ -9,7 +9,23 @@ import { passwordMatchValidator } from 'src/app/shared/password-match.directive'
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css']
 })
-export class SignUpComponent {
+export class SignUpComponent implements OnInit{
+
+  selectedRole: string;
+
+  constructor(
+    private fb : FormBuilder,
+    private router: Router,
+    private activeRoute: ActivatedRoute
+  ){
+}
+
+  ngOnInit(): void {
+    this.selectedRole = this.activeRoute.snapshot.paramMap.get('role');
+  }
+
+
+
 
   SignUpForm = this.fb.group({
     fullName: ['', [Validators.required, Validators.pattern(/^[A-Za-z]+(?: [A-Za-z]+)*$/)]],
@@ -19,11 +35,7 @@ export class SignUpComponent {
   }, {
     validators: passwordMatchValidator
   })
-  constructor(
-            private fb : FormBuilder,
-            private router: Router
-          ){
-  }
+
 
 
 

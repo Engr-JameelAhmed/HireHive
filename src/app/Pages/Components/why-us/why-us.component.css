@@ -17,7 +17,6 @@
   opacity: 0.5; /* Adjust the opacity value as needed */
   z-index: -1; /* Ensure the pseudo-element is behind the content */
 }
-
 .background-container {
   display: flex;
   justify-content: space-evenly;
@@ -25,15 +24,116 @@
   height: 100%;
 }
 
-.who, .what {
-  width: 550px;
-  padding: 25px;
+.who{
+  display: flex;
+  flex-direction: column;
+  margin: 40px;
+  padding: 40px;
+
+}
+.who h3{
+  font-size: 30px;
+  font-weight: 600;
+  white-space: nowrap;
+
+}
+.who2{
   background-color: bisque;
   border-radius: 15px;
-  box-sizing: border-box;
-  margin: 90px;
+  width: 550px;
+  height: 160px;
+  padding: 25px;
+}
+.who2 p{
+  font-weight: 400;
+  line-height: 1.8rem;
+}
+ /* -----------------what ----------------- */
+ .what{
+  display: flex;
+  flex-direction: column;
+  margin: 40px;
+  padding: 40px;
+  justify-content: flex-end;
+  /* align-content: flex-end; */
+  align-items: flex-end;
+
+}
+.what h3{
+  font-size: 30px;
+  font-weight: 600;
+  margin-right: 370px;
+  white-space: nowrap;
+}
+.what2{
+  background-color: bisque;
+  border-radius: 15px;
+  width: 550px;
+  height: 160px;
+  padding: 25px;
+}
+.what2 p{
+  font-weight: 400;
+  line-height: 1.8rem;
 }
 
-.what {
-  align-self: flex-end;
+
+@media only screen and (max-width: 650px){
+  .who2{
+    width: 500px;
+    height: 160px;
+    padding: 25px;
+  }
+  .what2{
+    width: 500px;
+    height: 160px;
+    padding: 25px;
+  }
+  .what h3{
+    font-size: 28px;
+    margin-right: 330px;
+  }
+  .who h3{
+    font-size: 28px;
+  }
+}
+@media only screen and (max-width: 600px){
+  .who2{
+    width: 450px;
+    padding: 20px;
+  }
+  .what2{
+    width: 450px;
+    padding: 20px;
+  }
+  .what h3{
+    margin-right: 280px;
+  }
+
+}
+@media only screen and (max-width: 550px){
+
+  .background-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+}
+@media only screen and (max-width: 480px){
+
+
+  .who2{
+    width: 350px;
+    padding: 10px;
+  }
+  .what2{
+    width: 350px;
+    padding: 10px;
+  }
+  .what h3{
+    margin-right: 180px;
+  }
 }
