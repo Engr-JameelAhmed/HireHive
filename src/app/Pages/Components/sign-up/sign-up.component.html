@@ -3,7 +3,7 @@
   <div id="signup-animations"></div>
   <div class="form-container">
     <form [formGroup]="SignUpForm" (ngSubmit)="submitDetails()">
-      <p-card [header]="'Sign Up ' + selectedRole" class="p-card">
+      <p-card [header]="selectedRole ? 'Sign Up ' + selectedRole : 'Sign Up'" class="p-card">
         <div class="field">
           <label for="fullName">FullName</label>
           <input type="text" pInputText formControlName="fullName" class="w-full" name="fullName" placeholder="Enter Your FullName"/>

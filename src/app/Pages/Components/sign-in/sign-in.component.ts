@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserServiceService } from 'src/app/services/user-service.service';
 
 export interface loginData {
   email: string;
@@ -16,7 +17,7 @@ export interface loginData {
   styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent implements OnInit{
-
+  values: string;
   loginObject: any = {
     email: '',
     password: ''
@@ -29,7 +30,9 @@ export class SignInComponent implements OnInit{
 
   constructor(
           private fb : FormBuilder,
-          private router: Router){
+          private router: Router,
+          private userService: UserServiceService
+        ){
 
   }
 
@@ -47,7 +50,7 @@ export class SignInComponent implements OnInit{
   }
 
   OnLogin(){
-
+      this.userService.checkCredentials(this.email.value, this.password.value);
   }
 
 }

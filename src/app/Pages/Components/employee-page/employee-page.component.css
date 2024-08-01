@@ -1,0 +1,69 @@
+.jobs{
+  display: flex;
+  gap: 85px;
+  /* margin: 40px; */
+  margin-top: 140px;
+  margin-left: 80px;
+}
+.inp{
+  border-radius: 25px;
+  color: red;
+}
+.main{
+  display: flex;
+}
+.search{
+  margin-top: 180px;
+  margin-left: 60px;
+
+}
+.custom-width {
+  width: 500px; /* Adjust the width as needed */
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center cards horizontally */
+  gap: 20px; /* Adjust space between cards */
+  max-width: calc(3 * 300px + 2 * 20px); /* Adjust container width to fit exactly 3 cards and gaps */
+  margin: 0 auto; /* Center the container horizontally on the page */
+  margin-right: 380px;
+}
+
+.card {
+  width: 300px; /* Adjust the width of the card as needed */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: add some shadow for better visuals */
+  border-radius: 8px; /* Optional: rounded corners */
+  padding: 16px; /* Optional: padding inside the card */
+  background-color: #f3e9e9; /* Optional: card background color */
+  text-align: center; /* Center text inside the card */
+  /* Optional: adjust height if necessary */
+  margin-bottom: 30px;
+}
+@media (max-width: 768px) {
+  .card-container {
+    max-width: 100%; /* Ensure the container fits the screen on smaller devices */
+  }
+
+  .card {
+    width: 100%; /* Make cards full width on smaller screens */
+  }
+}
+
+.example-section {
+
+  border: 1px solid black;
+  display: inline-block;
+  border-radius: 8px;
+  margin-top: 90px;
+  width: 200px;
+  margin-left: 90px;
+}
+
+.seeMoreBtn{
+  background-color: rgb(230, 223, 196);
+  border-radius: 15px;
+  padding: 15px;
+  font-size: 12px;
+}

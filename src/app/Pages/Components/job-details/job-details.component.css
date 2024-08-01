@@ -1,0 +1,60 @@
+/* job-details.component.css */
+mat-card {
+  max-width: 700px;
+  margin: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.title{
+  margin-bottom: 20px;
+}
+
+mat-card-header {
+  background-color: #f3f4f6;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+mat-card-title {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+mat-card-subtitle {
+  font-size: 1.2em;
+  color: #555;
+}
+
+.job-details {
+  padding: 16px;
+}
+
+.category, .work-type {
+  font-weight: 500;
+  color: #3f51b5;
+}
+
+mat-divider {
+  margin: 16px 0;
+}
+
+h3 {
+  font-size: 1.3em;
+  color: #333;
+}
+
+.details {
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+}
+
+mat-card-actions {
+  padding: 8px;
+  background-color: #f3f4f6;
+  border-top: 1px solid #e0e0e0;
+}
+
+button[mat-raised-button] {
+  margin-left: 8px;
+}

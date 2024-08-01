@@ -1,0 +1,100 @@
+<div class="main">
+  <div class="jobs">
+    <form>
+      <mat-form-field>
+        <mat-label>Job Type</mat-label>
+        <mat-select [(ngModel)]="typeSelectedValue" name="job">
+          <mat-option
+            class="inp"
+            *ngFor="let food of type"
+            [value]="food.jobType"
+            >{{ food.jobType }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+      <!-- <p>Selected Job Type: {{selectedValue}}</p> -->
+      <p></p>
+      <mat-form-field>
+        <mat-label>Category</mat-label>
+        <mat-select [(ngModel)]="categorySelectedValue" name="category">
+          <mat-option
+            class="inp"
+            *ngFor="let food of category"
+            [value]="food.jobCategory"
+            >{{ food.jobCategory }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+      <!-- <p>Selected Job Category: {{selectedValue}}</p> -->
+      <p></p>
+    </form>
+    <form>
+      <mat-form-field>
+        <mat-label>Location</mat-label>
+        <mat-select [(ngModel)]="locationSelectedValue" name="location">
+          <mat-option
+            class="inp"
+            *ngFor="let food of location"
+            [value]="food.jobLocation"
+            >{{ food.jobLocation }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+
+      <!-- <p>Selected Job Location: {{selectedValue}}</p> -->
+      <p></p>
+      <mat-form-field>
+        <mat-label>Work</mat-label>
+        <mat-select [(ngModel)]="workTypeSelectedValue" name="work">
+          <mat-option
+            class="inp"
+            *ngFor="let food of workype"
+            [value]="food.jobWorkType"
+            >{{ food.jobWorkType }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+      <!-- <p>Selected Job Work-type: {{selectedValue}}</p> -->
+      <p></p>
+    </form>
+  </div>
+
+  <div class="search flex flex-wrap justify-content-center gap-3">
+    <span class="p-input-icon-right">
+      <i class="pi pi-search"></i>
+      <input type="text" pInputText [(ngModel)]="value" class="custom-width" placeholder="Search for a Job"/>
+    </span>
+  </div>
+  <section class="example-section" [formGroup]="toppings">
+    <!-- <h4>Select your toppings:</h4> -->
+    <p><mat-checkbox formControlName="IT">IT</mat-checkbox></p>
+    <p><mat-checkbox formControlName="Marketing">Marketing</mat-checkbox></p>
+    <p><mat-checkbox formControlName="Finance">Finance</mat-checkbox></p>
+    <p><mat-checkbox formControlName="Managment">Managment</mat-checkbox></p>
+    <p><mat-checkbox formControlName="Business">Business</mat-checkbox></p>
+    <p><mat-checkbox formControlName="ComputerScience">Computer Science</mat-checkbox></p>
+    <p><mat-checkbox formControlName="Psychology">Psychology</mat-checkbox></p>
+    <p><mat-checkbox formControlName="SoftwareEngineering">Software Engineering</mat-checkbox></p>
+  </section>
+</div>
+
+
+
+
+
+<div class="card-container">
+  <div class="card" *ngFor="let job of jobs">
+    <div class="title">
+      <h1>{{ job.title }}</h1>
+    </div>
+    <div class="desc">
+      <p>{{ job.description }}</p>
+    </div>
+    <div class="seeMore">
+      <button class="seeMoreBtn" mat-button (click)="details(job)">See More</button>
+    </div>
+  </div>
+</div>
+
+
+

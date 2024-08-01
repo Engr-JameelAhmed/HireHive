@@ -1,0 +1,18 @@
+<div class="create-upload">
+  <div class="upload-file">
+    <h1>Upload Your CV</h1>
+    <div class="card flex justify-content-center">
+        <p-toast></p-toast>
+        <p-fileUpload mode="basic" chooseLabel="Choose" name="demo[]" url="https://www.primefaces.org/cdn/api/upload.php" accept="image/*" [maxFileSize]="1000000" (onUpload)="onUpload($event)"></p-fileUpload>
+    </div>
+  </div>
+  <div class="upload-file">
+    <h1>Create a CV</h1>
+    <section>
+      <div class="example-button-row">
+        <button class="btn custom-btn" mat-raised-button color="primary">Create</button>
+      </div>
+    </section>
+  </div>
+</div>
+

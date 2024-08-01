@@ -1,0 +1,32 @@
+<!-- job-details.component.html -->
+<mat-card>
+  <mat-card-header>
+    <mat-card-title class="title">{{ data.title }}</mat-card-title>
+    <mat-card-subtitle>{{ data.type }} | {{ data.location }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="job-details">
+      <mat-card-subtitle>
+        <span class="category">{{ data.category }}</span> |
+        <span class="work-type">{{ data.work }}</span>
+      </mat-card-subtitle>
+      <mat-divider></mat-divider>
+
+      <h3>Description</h3>
+      <p>{{ data.description }}</p>
+      <mat-divider></mat-divider>
+
+      <h3>Job Details</h3>
+      <div class="details">
+        <p><strong>Category:</strong> {{ data.category }}</p>
+        <p><strong>Work Type:</strong> {{ data.work }}</p>
+      </div>
+    </div>
+  </mat-card-content>
+
+  <mat-card-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true" cdkFocusInitial>Apply</button>
+  </mat-card-actions>
+</mat-card>

@@ -21,6 +21,27 @@ import { ImageModule } from 'primeng/image';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
+import { EmployeePageComponent } from './Pages/Components/employee-page/employee-page.component';
+import { EmployerPageComponent } from './Pages/Components/employer-page/employer-page.component';
+import { InvestorPageComponent } from './Pages/Components/investor-page/investor-page.component';
+import { BusinessOwnerPageComponent } from './Pages/Components/business-owner-page/business-owner-page.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
+import { JobDetailsComponent } from './Pages/Components/job-details/job-details.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import { InputTextModule } from 'primeng/inputtext';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatCardModule} from '@angular/material/card';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatDividerModule } from '@angular/material/divider';
+import { EmployeeProfileComponent } from './Pages/Components/employee-profile/employee-profile.component';
+import { FileUploadModule } from 'primeng/fileupload';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
+
+
 
 
 @NgModule({
@@ -34,7 +55,15 @@ import { MatIconModule } from '@angular/material/icon';
     PageNotFoundComponent,
     ContactUsComponent,
     WhyUsComponent,
-    AboutComponent
+    AboutComponent,
+    EmployeePageComponent,
+    EmployerPageComponent,
+    InvestorPageComponent,
+    BusinessOwnerPageComponent,
+    JobDetailsComponent,
+    EmployeeProfileComponent,
+
+
   ],
   imports: [
     BrowserModule,
@@ -47,9 +76,24 @@ import { MatIconModule } from '@angular/material/icon';
     ImageModule,
     BrowserAnimationsModule,
     MatGridListModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    InputTextModule,
+    MatProgressBarModule,
+    MatCardModule,
+    MatChipsModule,
+    MatCheckboxModule,
+    MatDividerModule,
+    FileUploadModule,
+    ToastModule
+
+
+
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
