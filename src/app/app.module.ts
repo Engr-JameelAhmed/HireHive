@@ -40,8 +40,10 @@ import { EmployeeProfileComponent } from './Pages/Components/employee-profile/em
 import { FileUploadModule } from 'primeng/fileupload';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
-
-
+import { CvListingComponent } from './Pages/Components/cv-listing/cv-listing.component';
+import { JobPostingComponent } from './Pages/Components/job-posting/job-posting.component';
+import { DialogModule } from 'primeng/dialog';
+import { SplitButtonModule } from 'primeng/splitbutton';
 
 
 @NgModule({
@@ -62,6 +64,8 @@ import { MessageService } from 'primeng/api';
     BusinessOwnerPageComponent,
     JobDetailsComponent,
     EmployeeProfileComponent,
+    CvListingComponent,
+    JobPostingComponent,
 
 
   ],
@@ -88,7 +92,9 @@ import { MessageService } from 'primeng/api';
     MatCheckboxModule,
     MatDividerModule,
     FileUploadModule,
-    ToastModule
+    ToastModule,
+    DialogModule,
+    SplitButtonModule
 
 
 

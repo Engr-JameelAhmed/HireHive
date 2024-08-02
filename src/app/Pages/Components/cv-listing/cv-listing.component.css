@@ -1,0 +1,22 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 90px;
+  max-width: 700px;
+  margin: 120px auto;
+}
+
+.card {
+  width: 700px;
+}
+
+.custom-card {
+  background-color: lightblue !important; /* Set your desired background color */
+  padding: 16px; /* Add some padding for a better look */
+  border-radius: 8px; /* Optional: Add border-radius for rounded corners */
+}
+.card1{
+
+}

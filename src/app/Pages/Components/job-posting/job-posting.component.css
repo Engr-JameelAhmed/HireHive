@@ -1,0 +1,51 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 90px;
+  max-width: 700px;
+  margin: 120px auto;
+}
+
+.card {
+  width: 700px;
+}
+
+.custom-card {
+  background-color: lightblue !important;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.btn {
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  z-index: 1000;
+  padding: 10px;
+  border-radius: 8px;
+  /* border: 1px solid #ccc; */
+}
+
+
+.custom-button {
+  background-color: #ffa601; /* Background color */
+  color: #fff; /* Text color */
+  border: none; /* Remove border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px 20px; /* Padding for size */
+  font-size: 16px; /* Font size */
+  display: flex; /* Flexbox for alignment */
+  align-items: center; /* Align items vertically */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.custom-button i {
+  margin-right: 8px; /* Space between icon and text */
+  font-size: 20px; /* Icon size */
+}
+
+.custom-button:hover {
+  background-color: #0056b3; /* Darker background on hover */
+}

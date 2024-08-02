@@ -12,6 +12,8 @@ import { EmployerPageComponent } from './Pages/Components/employer-page/employer
 import { InvestorPageComponent } from './Pages/Components/investor-page/investor-page.component';
 import { BusinessOwnerPageComponent } from './Pages/Components/business-owner-page/business-owner-page.component';
 import { EmployeeProfileComponent } from './Pages/Components/employee-profile/employee-profile.component';
+import { CvListingComponent } from './Pages/Components/cv-listing/cv-listing.component';
+import { JobPostingComponent } from './Pages/Components/job-posting/job-posting.component';
 
 const routes: Routes = [
 
@@ -25,6 +27,11 @@ const routes: Routes = [
    { path: 'why-us', component:  WhyUsComponent},
    { path: 'employeeHome', component:  EmployeePageComponent},
    { path: 'employerHome', component:  EmployerPageComponent},
+   { path: 'employerHome', children: [
+    { path: 'cv-listing', component:  CvListingComponent},
+    { path: 'job-posting', component:  JobPostingComponent},
+   ]},
+
    { path: 'investorHome', component:  InvestorPageComponent},
    { path: 'employeeProfile', component:  EmployeeProfileComponent},
    { path: 'business-owner-Home', component:  BusinessOwnerPageComponent},
