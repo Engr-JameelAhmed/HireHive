@@ -1,51 +1,57 @@
-.page {
+/* ------------------   Taken form from sign-in page and the css starts from here ------------------------------------------------- */
+#login-container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 90px;
-  max-width: 700px;
-  margin: 120px auto;
+  height: 40vw;
+}
+.form-container {
+  width: 460px;
+}
+.p-card {
+  border-radius: 12px;
+  padding: 0;
+}
+.field {
+  margin-bottom: 1rem;
+}
+.field label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
 }
 
-.card {
-  width: 700px;
+small.p-error {
+  color: #dc3545;
+  font-size: 0.875rem;
 }
-
-.custom-card {
-  background-color: lightblue !important;
-  padding: 16px;
-  border-radius: 8px;
+p-button {
+  margin-top: 1rem;
 }
-
-.btn {
-  position: fixed;
-  top: 90px;
-  right: 20px;
-  z-index: 1000;
-  padding: 10px;
-  border-radius: 8px;
-  /* border: 1px solid #ccc; */
+.mt-2 {
+  margin-top: 1rem;
 }
-
-
-.custom-button {
-  background-color: #ffa601; /* Background color */
-  color: #fff; /* Text color */
-  border: none; /* Remove border */
-  border-radius: 8px; /* Rounded corners */
-  padding: 10px 20px; /* Padding for size */
-  font-size: 16px; /* Font size */
-  display: flex; /* Flexbox for alignment */
-  align-items: center; /* Align items vertically */
-  cursor: pointer; /* Cursor on hover */
+a {
+  color: #007bff;
+  text-decoration: none;
 }
-
-.custom-button i {
-  margin-right: 8px; /* Space between icon and text */
-  font-size: 20px; /* Icon size */
+a:hover {
+  text-decoration: underline;
 }
-
-.custom-button:hover {
-  background-color: #0056b3; /* Darker background on hover */
-}
+/* ------------------   Taken form from sign-in page and the css ends from here ------------------------------------------------- */

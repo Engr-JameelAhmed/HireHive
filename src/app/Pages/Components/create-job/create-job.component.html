@@ -1,0 +1,64 @@
+<div id="login-container">
+  <div class="form-container">
+    <form [formGroup]="JobPostingForm" (ngSubmit)="onCreateJob()">
+      <p-card header="Create New Job" class="p-card">
+        <div class="field">
+          <label for="email">Location</label>
+          <input type="text" pInputText formControlName="location" name="location" placeholder="Enter Location"/>
+          <small *ngIf="location.invalid && (location.dirty || location.touched)" class="block p-error">
+            <div *ngIf="location.errors?.['required']">
+                Location is required
+            </div>
+          </small>
+        </div>
+
+        <div class="field">
+          <label for="department">Department</label>
+          <input type="text" pInputText formControlName="department" name="department" placeholder="Enter Department"/>
+          <small *ngIf="department.invalid && (department.dirty || department.touched)" class="block p-error">
+            <div *ngIf="department.errors?.['required']">
+                Department is required
+            </div>
+          </small>
+        </div>
+        <div class="field">
+          <label for="type">Type</label>
+          <input type="text" pInputText formControlName="type" name="type" placeholder="Enter Type"/>
+          <small *ngIf="type.invalid && (type.dirty || type.touched)" class="block p-error">
+            <div *ngIf="type.errors?.['required']">
+                Type is required
+            </div>
+          </small>
+        </div>
+        <div class="field">
+          <label for="salary">Salary</label>
+          <input type="number" pInputText formControlName="salary" name="salary" placeholder="Enter Salary"/>
+          <small *ngIf="salary.invalid && (salary.dirty || salary.touched)" class="block p-error">
+            <div *ngIf="salary.errors?.['required']">
+                Salary is required
+            </div>
+          </small>
+        </div>
+        <div class="field">
+          <label for="postedDate">postedDate</label>
+          <input type="date" pInputText formControlName="postedDate" name="postedDate" placeholder="Enter Posted-Date"/>
+          <small *ngIf="postedDate.invalid && (postedDate.dirty || postedDate.touched)" class="block p-error">
+            <div *ngIf="postedDate.errors?.['required']">
+                Posted-Date is required
+            </div>
+          </small>
+        </div>
+        <div class="field">
+          <label for="jobDescription">Job-Description</label>
+          <textarea type="text" pInputText formControlName="jobDescription" name="jobDescription" placeholder="Enter Job-Description"></textarea>
+          <small *ngIf="jobDescription.invalid && (jobDescription.dirty || jobDescription.touched)" class="block p-error">
+            <div *ngIf="jobDescription.errors?.['required']">
+              Job-Description is required
+            </div>
+          </small>
+        </div>
+        <p-button label="Post" styleClass="w-full" [disabled]="JobPostingForm.invalid" type="submit"></p-button>
+      </p-card>
+    </form>
+  </div>
+</div>

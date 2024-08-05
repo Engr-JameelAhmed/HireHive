@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="currentlyloggedRole === 'Employee'">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="home">HireHive</a>
+    <a class="navbar-brand" routerLink="home"><Span class="first">Hire</Span><span class="sec">Hive</span></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -32,7 +32,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="currentlyloggedRole === 'Employer'">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="home">HireHive</a>
+    <a class="navbar-brand" routerLink="home"><Span class="first">Hire</Span><span class="sec">Hive</span></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -41,10 +41,10 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="employerHome">Home</a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="cv-listing">CV Listing</a>
-        </li>
         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="jobs">All Posts</a>
+        </li>
+        <!-- <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="employerHome">Post a Job</a>
         </li> -->
         <li class="nav-item">
@@ -69,7 +69,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="currentlyloggedRole === 'Investor'">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="home">HireHive</a>
+    <a class="navbar-brand" routerLink="home"><Span class="first">Hire</Span><span class="sec">Hive</span></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -79,15 +79,14 @@
           <a class="nav-link active" aria-current="page" routerLink="investorHome">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="investorHome">All Investments</a>
+          <a class="nav-link active" aria-current="page" routerLink="investments">All Investments</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="investorHome">Create New Investments</a>
+          <a class="nav-link active" aria-current="page" routerLink="create-investment">Create New Investments</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="investorHome">Proposals</a>
+          <a class="nav-link active" aria-current="page" routerLink="investment-proposal">Proposals</a>
         </li>
-
         <li class="nav-item logout">
           <a class="nav-link" (click)="logout()">Logout</a>
         </li>
@@ -101,7 +100,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="currentlyloggedRole === 'BusinessOwner'">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="home">HireHive</a>
+    <a class="navbar-brand" routerLink="home"><Span class="first">Hire</Span><span class="sec">Hive</span></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -111,10 +110,13 @@
           <a class="nav-link active" aria-current="page" routerLink="business-owner-Home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="business-owner-Home">Business-Details</a>
+          <a class="nav-link active" aria-current="page" routerLink="create-job">Create Job</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="business-owner-Home">All Jobs</a>
+          <a class="nav-link active" aria-current="page" routerLink="businessess">Businesses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="cv-listing">Applications</a>
         </li>
 
         <li class="nav-item logout" >
@@ -132,7 +134,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="!loginState">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="home">HireHive</a>
+    <a class="navbar-brand" routerLink="home"><Span class="first">Hire</Span><span class="sec">Hive</span></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

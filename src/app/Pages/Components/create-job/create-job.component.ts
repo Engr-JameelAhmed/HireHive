@@ -1,25 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-
-export interface JobData {
-  location: string;
-  department: string;
-  type: string;
-  salary: number;
-  postedDate: Date;
-  jobDescription: string;
-}
-
-
 @Component({
-  selector: 'app-job-posting',
-  templateUrl: './job-posting.component.html',
-  styleUrls: ['./job-posting.component.css'],
+  selector: 'app-create-job',
+  templateUrl: './create-job.component.html',
+  styleUrls: ['./create-job.component.css']
 })
-export class JobPostingComponent implements OnInit {
-  visible: boolean = false;
+export class CreateJobComponent {
 
   values: string;
   jobObject: any = {
@@ -66,21 +54,8 @@ export class JobPostingComponent implements OnInit {
   }
 
 
-
-  createJob() {
-    this.visible = true;
-  }
   onCreateJob(){
     console.log(this.JobPostingForm.value);
   }
-
-
-
-
-
-
-
-
-
 
 }

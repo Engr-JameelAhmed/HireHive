@@ -44,6 +44,13 @@ import { CvListingComponent } from './Pages/Components/cv-listing/cv-listing.com
 import { JobPostingComponent } from './Pages/Components/job-posting/job-posting.component';
 import { DialogModule } from 'primeng/dialog';
 import { SplitButtonModule } from 'primeng/splitbutton';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { CreateJobComponent } from './Pages/Components/create-job/create-job.component';
+import { JobsComponent } from './Pages/Components/jobs/jobs.component';
+import { BusinessesComponent } from './Pages/Components/businesses/businesses.component';
+import { CreateInvestmentComponent } from './Pages/Components/create-investment/create-investment.component';
+import { InvestmentsComponent } from './Pages/Components/investments/investments.component';
+import { InvestmentProposalsComponent } from './Pages/Components/investment-proposals/investment-proposals.component';
 
 
 @NgModule({
@@ -66,6 +73,12 @@ import { SplitButtonModule } from 'primeng/splitbutton';
     EmployeeProfileComponent,
     CvListingComponent,
     JobPostingComponent,
+    CreateJobComponent,
+    JobsComponent,
+    BusinessesComponent,
+    CreateInvestmentComponent,
+    InvestmentsComponent,
+    InvestmentProposalsComponent,
 
 
   ],
@@ -94,7 +107,8 @@ import { SplitButtonModule } from 'primeng/splitbutton';
     FileUploadModule,
     ToastModule,
     DialogModule,
-    SplitButtonModule
+    SplitButtonModule,
+    InputTextareaModule
 
 
 

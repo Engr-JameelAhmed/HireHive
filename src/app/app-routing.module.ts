@@ -14,6 +14,12 @@ import { BusinessOwnerPageComponent } from './Pages/Components/business-owner-pa
 import { EmployeeProfileComponent } from './Pages/Components/employee-profile/employee-profile.component';
 import { CvListingComponent } from './Pages/Components/cv-listing/cv-listing.component';
 import { JobPostingComponent } from './Pages/Components/job-posting/job-posting.component';
+import { CreateJobComponent } from './Pages/Components/create-job/create-job.component';
+import { JobsComponent } from './Pages/Components/jobs/jobs.component';
+import { BusinessesComponent } from './Pages/Components/businesses/businesses.component';
+import { InvestmentsComponent } from './Pages/Components/investments/investments.component';
+import { CreateInvestmentComponent } from './Pages/Components/create-investment/create-investment.component';
+import { InvestmentProposalsComponent } from './Pages/Components/investment-proposals/investment-proposals.component';
 
 const routes: Routes = [
 
@@ -25,6 +31,13 @@ const routes: Routes = [
    { path: 'contact-us', component:  ContactUsComponent},
    { path: 'about', component:  AboutComponent},
    { path: 'why-us', component:  WhyUsComponent},
+   { path: 'cv-listing', component:  CvListingComponent},
+   { path: 'create-job', component:  CreateJobComponent},
+   { path: 'jobs', component:  JobsComponent},
+   { path: 'create-investment', component:  CreateInvestmentComponent},
+   { path: 'investments', component:  InvestmentsComponent},
+   { path: 'investment-proposal', component:  InvestmentProposalsComponent},
+   { path: 'businessess', component:  BusinessesComponent},
    { path: 'employeeHome', component:  EmployeePageComponent},
    { path: 'employerHome', component:  EmployerPageComponent},
    { path: 'employerHome', children: [

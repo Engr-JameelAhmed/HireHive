@@ -1,12 +1,18 @@
+.first{
+
+}
+.sec{
+  color: #ffa601;
+}
 .collapse{
   margin-right: 180px;
   padding: 10px;
   cursor: pointer;
 }
 .navbar-brand{
-  color: brown;
-  font-size: 25px;
+  font-size: 35px;
   margin-left: 100px;
+  font-weight: 500;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
 
 }

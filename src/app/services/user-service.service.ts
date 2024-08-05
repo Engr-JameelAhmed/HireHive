@@ -15,14 +15,13 @@ export class UserServiceService {
 
   constructor(
       private router: Router
-
   ) { }
 
   users: User[] = [
     new User('Jameel Ahmed', 'jameel@gmail.com', 'jameel123','Employee'),
-    new User('Toqeer Ahmed', 'toqeer@gmail.com', 'toqeer123','Employer'),
-    new User('Waqar Ahmed', 'waqar@gmail.com', 'waqar123','Investor'),
-    new User('Waqar Ahmed', 'waqar@gmail.com', 'waqar123','BusinessOwner')
+    new User('Raheel Afzal', 'raheel@gmail.com', 'raheel123','Employer'),
+    new User('Huzaifa Aslam', 'huzaifa@gmail.com', 'huzaifa123','Investor'),
+    new User('Majboori', 'majboori@gmail.com', 'majboori123','BusinessOwner')
   ];
 
 
