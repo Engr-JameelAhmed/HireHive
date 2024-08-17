@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="currentlyloggedRole === 'Employee'">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="currentlyloggedRole === 'ROLE_EMPLOYEE'">
   <div class="container-fluid">
     <a class="navbar-brand" routerLink="home"><Span class="first">Hire</Span><span class="sec">Hive</span></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +30,7 @@
 
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="currentlyloggedRole === 'Employer'">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="currentlyloggedRole === 'ROLE_EMPLOYER'">
   <div class="container-fluid">
     <a class="navbar-brand" routerLink="home"><Span class="first">Hire</Span><span class="sec">Hive</span></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,7 +67,7 @@
 
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="currentlyloggedRole === 'Investor'">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="currentlyloggedRole === 'ROLE_INVESTOR'">
   <div class="container-fluid">
     <a class="navbar-brand" routerLink="home"><Span class="first">Hire</Span><span class="sec">Hive</span></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -98,7 +98,7 @@
 <!-- --------------------------------   Business Owner   ---------------------------------------------- -->
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="currentlyloggedRole === 'BusinessOwner'">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="currentlyloggedRole === 'ROLE_BUSINESSOWNER'">
   <div class="container-fluid">
     <a class="navbar-brand" routerLink="home"><Span class="first">Hire</Span><span class="sec">Hive</span></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

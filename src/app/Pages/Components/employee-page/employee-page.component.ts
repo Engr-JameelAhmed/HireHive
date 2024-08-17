@@ -1,9 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { JobDetailsComponent } from '../job-details/job-details.component';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
-import {MatCardModule} from '@angular/material/card';
-import {MatChipsModule} from '@angular/material/chips';
 import { JobService } from 'src/app/services/jobs-service.service';
 import { Jobs } from 'src/app/Models/Jobs';
 import { FormBuilder } from '@angular/forms';
@@ -84,8 +81,17 @@ export class EmployeePageComponent implements OnInit{
 
   ) {}
 
+  // ngOnInit(): void {
+  //   this.jobs = this.jobService.getAllJobs();
+  // }
+
   ngOnInit(): void {
-    this.jobs = this.jobService.getAllJobs();
+    this.jobService.getAllJobs().subscribe((data: Jobs[]) => {
+      this.jobs = data;
+      debugger
+      console.log('Jobs are --------: ',this.jobs);
+      
+    });
   }
 
 
