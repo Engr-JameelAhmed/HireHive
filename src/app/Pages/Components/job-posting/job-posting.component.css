@@ -3,10 +3,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40vw;
+  height: 60vw;
 }
 .form-container {
-  width: 460px;
+  width: 360px;
 }
 .p-card {
   border-radius: 12px;
@@ -14,6 +14,9 @@
 }
 .field {
   margin-bottom: 1rem;
+}
+.dropdown select{
+  width: 100%;
 }
 .field label {
   display: block;

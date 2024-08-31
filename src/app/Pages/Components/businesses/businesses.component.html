@@ -1,36 +1,20 @@
-<div class="createBusiness">
+<!-- <div class="createBusiness">
   <div class="card flex justify-content-center">
-    <p-button
-      (click)="showDialog()"
-      [style]="{ width: '20vw', borderRadius: '5px',  }"
-      icon="pi pi-plus"
-      label="Create Business"
-    ></p-button>
-    <p-dialog
-      [(visible)]="visible"
-      [style]="{ width: '80vw', height: '80vw' }"
-    >
+    <p-button (click)="showDialog()" [style]="{ width: '20vw', borderRadius: '5px',  }" icon="pi pi-plus"
+      label="Create Business"></p-button>
+    <p-dialog [(visible)]="visible" [style]="{ width: '80vw', height: '80vw' }">
       <div class="form-container">
         <form [formGroup]="CreateBusinessForm" (ngSubmit)="CreateBusiness()">
           <p-card header="Create New Business" class="p-card">
             <div class="field">
               <label for="businessName">BusinessName</label>
-              <input
-                type="text"
-                pInputText
-                formControlName="businessName"
-                class="w-full"
-                name="businessName"
-                placeholder="Enter Your BusinessName"
-              />
-              <small
-                *ngIf="
+              <input type="text" pInputText formControlName="businessName" class="w-full" name="businessName"
+                placeholder="Enter Your BusinessName" />
+              <small *ngIf="
                   CreateBusinessForm.controls['businessName'].invalid &&
                   (CreateBusinessForm.controls['businessName'].dirty ||
                     CreateBusinessForm.controls['businessName'].touched)
-                "
-                class="block p-error"
-              >
+                " class="block p-error">
                 <div *ngIf="businessName.errors?.['required']">
                   BusinessName is required
                 </div>
@@ -39,22 +23,13 @@
             </div>
             <div class="field">
               <label for="locationName">LocationName</label>
-              <input
-                type="text"
-                pInputText
-                formControlName="locationName"
-                class="w-full"
-                name="locationName"
-                placeholder="Enter Your locationName"
-              />
-              <small
-                *ngIf="
+              <input type="text" pInputText formControlName="locationName" class="w-full" name="locationName"
+                placeholder="Enter Your locationName" />
+              <small *ngIf="
                   CreateBusinessForm.controls['locationName'].invalid &&
                   (CreateBusinessForm.controls['locationName'].dirty ||
                     CreateBusinessForm.controls['locationName'].touched)
-                "
-                class="block p-error"
-              >
+                " class="block p-error">
                 <div *ngIf="locationName.errors?.['required']">
                   BusinessName is required
                 </div>
@@ -63,22 +38,13 @@
             </div>
             <div class="field">
               <label for="businesslevel">Businesslevel</label>
-              <input
-                type="text"
-                pInputText
-                formControlName="businesslevel"
-                class="w-full"
-                name="businesslevel"
-                placeholder="Enter Your businesslevel"
-              />
-              <small
-                *ngIf="
+              <input type="text" pInputText formControlName="businesslevel" class="w-full" name="businesslevel"
+                placeholder="Enter Your businesslevel" />
+              <small *ngIf="
                   CreateBusinessForm.controls['businesslevel'].invalid &&
                   (CreateBusinessForm.controls['businesslevel'].dirty ||
                     CreateBusinessForm.controls['businesslevel'].touched)
-                "
-                class="block p-error"
-              >
+                " class="block p-error">
                 <div *ngIf="businesslevel.errors?.['required']">
                   Businesslevel is required
                 </div>
@@ -87,22 +53,13 @@
             </div>
             <div class="field">
               <label for="cityName">CityName</label>
-              <input
-                type="text"
-                pInputText
-                formControlName="cityName"
-                class="w-full"
-                name="cityName"
-                placeholder="Enter Your cityName"
-              />
-              <small
-                *ngIf="
+              <input type="text" pInputText formControlName="cityName" class="w-full" name="cityName"
+                placeholder="Enter Your cityName" />
+              <small *ngIf="
                   CreateBusinessForm.controls['cityName'].invalid &&
                   (CreateBusinessForm.controls['cityName'].dirty ||
                     CreateBusinessForm.controls['cityName'].touched)
-                "
-                class="block p-error"
-              >
+                " class="block p-error">
                 <div *ngIf="cityName.errors?.['required']">
                   CityName is required
                 </div>
@@ -111,22 +68,13 @@
             </div>
             <div class="field">
               <label for="businessSite">BusinessSite</label>
-              <input
-                type="text"
-                pInputText
-                formControlName="businessSite"
-                class="w-full"
-                name="businessSite"
-                placeholder="Enter Your businessSite"
-              />
-              <small
-                *ngIf="
+              <input type="text" pInputText formControlName="businessSite" class="w-full" name="businessSite"
+                placeholder="Enter Your businessSite" />
+              <small *ngIf="
                   CreateBusinessForm.controls['businessSite'].invalid &&
                   (CreateBusinessForm.controls['businessSite'].dirty ||
                     CreateBusinessForm.controls['businessSite'].touched)
-                "
-                class="block p-error"
-              >
+                " class="block p-error">
                 <div *ngIf="businessSite.errors?.['required']">
                   BusinessSite is required
                 </div>
@@ -135,78 +83,43 @@
             </div>
             <div class="field">
               <label for="countryName">CountryName</label>
-              <input
-                type="text"
-                pInputText
-                formControlName="countryName"
-                class="w-full"
-                name="countryName"
-                placeholder="Enter Your countryName"
-              />
-              <small
-                *ngIf="
+              <input type="text" pInputText formControlName="countryName" class="w-full" name="countryName"
+                placeholder="Enter Your countryName" />
+              <small *ngIf="
                   CreateBusinessForm.controls['countryName'].invalid &&
                   (CreateBusinessForm.controls['countryName'].dirty ||
                     CreateBusinessForm.controls['countryName'].touched)
-                "
-                class="block p-error"
-              >
+                " class="block p-error">
                 <div *ngIf="countryName.errors?.['required']">
                   CountryName is required
                 </div>
               </small>
               <br />
             </div>
-            <p-button
-              label="Create"
-              styleClass="w-full"
-              [disabled]="CreateBusinessForm.invalid"
-              type="submit"
-            ></p-button>
+            <p-button label="Create" styleClass="w-full" [disabled]="CreateBusinessForm.invalid"
+              type="submit"></p-button>
           </p-card>
         </form>
       </div>
     </p-dialog>
   </div>
-</div>
-
+</div> -->
 
 <!-- -----------------------------------        Businessess ------------------------------------------------ -->
 
-
+<h1 class="title">Pending Businessess</h1>
 
 <div class="page">
-  <div class="card flex justify-content-center m-5">
-    <mat-card class="custom-card">
+  <div class="card justify-content-center">
+    <mat-card class="custom-card" *ngFor="let business of businesses">
       <mat-card-header>
-        <mat-card-title>Junior Software Engineer</mat-card-title>
+        <mat-card-title>{{ business.name }}</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <h4>Posted On: </h4>
-        <p class="m-2">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
-          sed consequuntur error repudiandae numquam deserunt quisquam repellat
-          libero asperiores earum nam nobis, culpa ratione quam perferendis
-          esse, cupiditate neque quas!
-        </p>
+        <h4>Posted On: {{ business.createdOn | date:'shortDate' }}</h4>
+        <p class="m-2">{{ business.description }}</p>
       </mat-card-content>
     </mat-card>
   </div>
-  <div class="card flex justify-content-center m-5">
-    <mat-card class="custom-card">
-      <mat-card-header>
-        <mat-card-title>Junior Software Engineer</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <h4>Posted On: </h4>
-        <p class="m-2">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
-          sed consequuntur error repudiandae numquam deserunt quisquam repellat
-          libero asperiores earum nam nobis, culpa ratione quam perferendis
-          esse, cupiditate neque quas!
-        </p>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <!-- Repeat for other cards -->
+  
 </div>

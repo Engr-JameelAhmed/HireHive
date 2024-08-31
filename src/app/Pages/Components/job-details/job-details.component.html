@@ -9,7 +9,7 @@
     <div class="job-details">
       <mat-card-subtitle>
         <span class="category">{{ data.category }}</span> |
-        <span class="work-type">{{ data.work }}</span>
+        <span class="work-type">{{ data.type }}</span>
       </mat-card-subtitle>
       <mat-divider></mat-divider>
 
@@ -20,7 +20,9 @@
       <h3>Job Details</h3>
       <div class="details">
         <p><strong>Category:</strong> {{ data.category }}</p>
-        <p><strong>Work Type:</strong> {{ data.work }}</p>
+        <p><strong>Work Type:</strong> {{ data.type }}</p>
+        <p><strong>Salary:</strong> {{ data.salary }}</p>
+        <p><strong>Company Location:</strong> {{ data.location }}</p>
       </div>
     </div>
   </mat-card-content>

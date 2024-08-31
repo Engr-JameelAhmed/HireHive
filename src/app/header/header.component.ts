@@ -55,7 +55,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   logout() {
     localStorage.removeItem('accessToken');
     this.currentlyloggedRole = 'visitor';
-    this.router.navigateByUrl('/sign-in'); // Navigate to the login page after logout
+    this.router.navigateByUrl('/'); // Navigate to the login page after logout
     this.messageService.add({
       severity: 'success',
       summary: 'Logout Successful',

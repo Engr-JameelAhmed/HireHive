@@ -1,5 +1,9 @@
+<!-- <div class="example-button-row">
+  <button mat-raised-button color="primary">Primary</button>
+</div> -->
 <div class="main">
   <div class="jobs">
+      
     <form>
       <mat-form-field>
         <mat-label>Job Type</mat-label>
@@ -60,10 +64,14 @@
   </div>
 
   <div class="search flex flex-wrap justify-content-center gap-3">
+    <button mat-raised-button color="primary" (click)="findJobByOptons()">Find</button>
+    <hr>
     <span class="p-input-icon-right">
       <i class="pi pi-search"></i>
-      <input type="text" pInputText [(ngModel)]="value" class="custom-width" placeholder="Search for a Job"/>
+      <input type="text" pInputText [(ngModel)]="value" (ngModelChange)="searchJobs()" class="custom-width" placeholder="Search for a Job"/>
     </span>
+    
+
   </div>
   <section class="example-section" [formGroup]="toppings">
     <!-- <h4>Select your toppings:</h4> -->
@@ -79,11 +87,8 @@
 </div>
 
 
-
-
-
 <div class="card-container">
-  <div class="card" *ngFor="let job of jobs">
+  <div class="card" *ngFor="let job of filteredJobs">
     <div class="title">
       <h1>{{ job.title }}</h1>
     </div>
@@ -95,6 +100,4 @@
     </div>
   </div>
 </div>
-
-
 

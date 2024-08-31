@@ -51,7 +51,10 @@ import { BusinessesComponent } from './Pages/Components/businesses/businesses.co
 import { CreateInvestmentComponent } from './Pages/Components/create-investment/create-investment.component';
 import { InvestmentsComponent } from './Pages/Components/investments/investments.component';
 import { InvestmentProposalsComponent } from './Pages/Components/investment-proposals/investment-proposals.component';
-
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptorService } from './services/auth-interceptor.service';
+import { DropdownModule } from 'primeng/dropdown';
+import { CreateBusinessComponent } from './Pages/Components/create-business/create-business.component'; 
 
 @NgModule({
   declarations: [
@@ -79,6 +82,7 @@ import { InvestmentProposalsComponent } from './Pages/Components/investment-prop
     CreateInvestmentComponent,
     InvestmentsComponent,
     InvestmentProposalsComponent,
+    CreateBusinessComponent,
 
 
   ],
@@ -108,12 +112,16 @@ import { InvestmentProposalsComponent } from './Pages/Components/investment-prop
     ToastModule,
     DialogModule,
     SplitButtonModule,
-    InputTextareaModule
+    InputTextareaModule,
+    DropdownModule
 
 
 
   ],
-  providers: [MessageService],
+  providers: [
+            MessageService, 
+            { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }
+        ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

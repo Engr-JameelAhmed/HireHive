@@ -1,84 +1,19 @@
 <div class="page">
-  <div class="card flex justify-content-center m-5">
+  <div class="card flex justify-content-center m-5" *ngFor="let job of jobs">
     <mat-card class="custom-card">
       <mat-card-header>
-        <mat-card-title>Junior Software Engineer</mat-card-title>
+        <mat-card-title>{{ job.title }} <span>  : </span> {{ job.companyName }}</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <h4>Posted On: </h4>
-        <p class="m-2">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
-          sed consequuntur error repudiandae numquam deserunt quisquam repellat
-          libero asperiores earum nam nobis, culpa ratione quam perferendis
-          esse, cupiditate neque quas!
-        </p>
+        <h4><span style="font-weight: 700;">Posted On: </span>{{ job.postedDate | date:'shortDate' }}</h4> 
+        <br>
+        <br>
+        <p><span style="font-weight: 700;">Location : </span> {{ job.location }}</p>
+        <p><span style="font-weight: 700;">Salary :</span> {{ job.salary }}Pkr</p>
+        <p><span style="font-weight: 700;">Type :</span> {{ job.type }}</p>
+        <p><span style="font-weight: 700;">Domain :</span> {{ job.category }}</p>
+        <p class="m-2"> <span style="font-weight: 700;">Description : </span><br>{{ job.description }}</p>
       </mat-card-content>
     </mat-card>
   </div>
-  <div class="card flex justify-content-center m-5">
-    <mat-card class="custom-card">
-      <mat-card-header>
-        <mat-card-title>Junior Software Engineer</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <h4>Posted On: </h4>
-        <p class="m-2">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
-          sed consequuntur error repudiandae numquam deserunt quisquam repellat
-          libero asperiores earum nam nobis, culpa ratione quam perferendis
-          esse, cupiditate neque quas!
-        </p>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div class="card flex justify-content-center m-5">
-    <mat-card class="custom-card">
-      <mat-card-header>
-        <mat-card-title>Junior Software Engineer</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <h4>Posted On: </h4>
-        <p class="m-2">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
-          sed consequuntur error repudiandae numquam deserunt quisquam repellat
-          libero asperiores earum nam nobis, culpa ratione quam perferendis
-          esse, cupiditate neque quas!
-        </p>
-      </mat-card-content>
-    </mat-card>
-  </div>
-
-  <div class="card flex justify-content-center m-5">
-    <mat-card class="custom-card">
-      <mat-card-header>
-        <mat-card-title>Junior Software Engineer</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <h4>Posted On: </h4>
-        <p class="m-2">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
-          sed consequuntur error repudiandae numquam deserunt quisquam repellat
-          libero asperiores earum nam nobis, culpa ratione quam perferendis
-          esse, cupiditate neque quas!
-        </p>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div class="card flex justify-content-center m-5">
-    <mat-card class="custom-card">
-      <mat-card-header>
-        <mat-card-title>Junior Software Engineer</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <h4>Posted On: </h4>
-        <p class="m-2">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
-          sed consequuntur error repudiandae numquam deserunt quisquam repellat
-          libero asperiores earum nam nobis, culpa ratione quam perferendis
-          esse, cupiditate neque quas!
-        </p>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <!-- Repeat for other cards -->
 </div>

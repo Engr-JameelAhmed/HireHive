@@ -1,1 +1,46 @@
-<p>investment-proposals works!</p>
+<div class="page">
+    <h1 class="title">Proposals</h1>
+    <div class="flex justify-content-center m-5">
+      <mat-card
+        class="custom-card m-3"
+        *ngFor="let event of proposals"
+      >
+        <mat-card-header>
+          <mat-card-title>{{ event.name }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p class="m-2">{{ event.description }}</p>
+        </mat-card-content>
+        <div class="card1 flex justify-content-center">
+          <p-button
+            class="btn"
+            (click)="showDialog(event)"
+            icon="pi pi-external-link"
+            label="See Details"
+          ></p-button>
+          <p-button
+            class="btn"
+            (click)="acceptProposal(event)"
+            label="Accept Proposal"
+          ></p-button>
+        </div>
+      </mat-card>
+    </div>
+    
+    <p-dialog
+      header="Application"
+      [modal]="true"
+      [(visible)]="visible"
+      [style]="{ width: '50vw' }"
+      [maximizable]="true"
+      (onHide)="hideDialog()"
+    >
+      <h2 *ngIf="selectedEvent">Business Name: {{ selectedEvent.name }}</h2>
+      <h2 *ngIf="selectedEvent">Created On: {{ selectedEvent.createdOn | date:'shortDate' }}</h2>
+      <h2 *ngIf="selectedEvent">Business Founder Name: {{ selectedEvent.ownerName }}</h2>
+      <h2 *ngIf="selectedEvent">Investment Required for : {{ selectedEvent.sharePercent }}% is : {{ selectedEvent.investmentAmount }} </h2>
+      <h2 *ngIf="selectedEvent">Business Industry : {{ selectedEvent.industry }}</h2>
+      <h2>Description : </h2>
+      <p *ngIf="selectedEvent">{{ selectedEvent.description }}</p>
+    </p-dialog>
+  </div>

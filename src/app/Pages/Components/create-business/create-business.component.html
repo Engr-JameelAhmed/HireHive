@@ -1,0 +1,45 @@
+<div id="login-container">
+    <div class="form-container">
+      <form [formGroup]="BusinessPostingForm" (ngSubmit)="onCreateBusiness()">
+        <p-card header="Create New Business" class="p-card">
+          <div class="field">
+            <input type="text" pInputText formControlName="industry" name="industry" placeholder="Enter Industry" />
+            <small *ngIf="industry.invalid && (industry.dirty || industry.touched)" class="block p-error">
+              <div *ngIf="industry.errors?.['required']">
+                industry is required
+              </div>
+            </small>
+          </div>
+          <div class="field">
+            <input type="text" pInputText formControlName="name" name="name" placeholder="Enter Your Business Name" />
+            <small *ngIf="name.invalid && (name.dirty || name.touched)" class="block p-error">
+              <div *ngIf="name.errors?.['required']">
+                name is required
+              </div>
+            </small>
+          </div>
+          
+          <div class="field">
+            <input type="number" pInputText formControlName="investmentAmount" name="investmentAmount" placeholder="Enter InvestmentAmount" />
+            <small *ngIf="investmentAmount.invalid && (investmentAmount.dirty || investmentAmount.touched)" class="block p-error">
+              <div *ngIf="investmentAmount.errors?.['required']">investmentAmount is required</div>
+            </small>
+          </div>
+          <div class="field">
+            <input type="number" pInputText formControlName="sharePercent" name="sharePercent" placeholder="Enter SharePercent" />
+            <small *ngIf="sharePercent.invalid && (sharePercent.dirty || sharePercent.touched)" class="block p-error">
+              <div *ngIf="sharePercent.errors?.['required']">SharePercent is required</div>
+            </small>
+          </div>
+          <div class="field">
+            <textarea pInputTextarea formControlName="description" name="description" placeholder="Enter Description"></textarea>
+            <small *ngIf="description.invalid && (description.dirty || description.touched)" class="block p-error">
+              <div *ngIf="description.errors?.['required']">Description is required</div>
+            </small>
+          </div>
+          <p-button label="Post" styleClass="w-full" [disabled]="BusinessPostingForm.invalid" type="submit"></p-button>
+        </p-card>
+      </form>
+    </div>
+  </div>
+  

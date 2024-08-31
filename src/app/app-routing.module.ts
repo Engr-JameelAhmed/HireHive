@@ -20,6 +20,7 @@ import { BusinessesComponent } from './Pages/Components/businesses/businesses.co
 import { InvestmentsComponent } from './Pages/Components/investments/investments.component';
 import { CreateInvestmentComponent } from './Pages/Components/create-investment/create-investment.component';
 import { InvestmentProposalsComponent } from './Pages/Components/investment-proposals/investment-proposals.component';
+import { CreateBusinessComponent } from './Pages/Components/create-business/create-business.component';
 
 const routes: Routes = [
 
@@ -35,6 +36,7 @@ const routes: Routes = [
    { path: 'create-job', component:  CreateJobComponent},
    { path: 'jobs', component:  JobsComponent},
    { path: 'create-investment', component:  CreateInvestmentComponent},
+   { path: 'create-business', component:  CreateBusinessComponent},
    { path: 'investments', component:  InvestmentsComponent},
    { path: 'investment-proposal', component:  InvestmentProposalsComponent},
    { path: 'businessess', component:  BusinessesComponent},
