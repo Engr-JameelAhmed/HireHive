@@ -17,5 +17,9 @@ export class ProposalService {
     return this.http.post<Proposal>(`${this.apiUrl}/investment/createInvestment`, proposal);
   }
 
+  getAllInvestmentsOfCurrentLoggedUser(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/investment/currentUserAllInvestments`);
+  }
+
  
 }

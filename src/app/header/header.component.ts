@@ -11,13 +11,14 @@ import { AuthServiceService } from '../services/auth-service.service';
 import { LoginDataService } from '../services/login-data.service';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
+import { UtilServiceService } from '../services/util-service.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent implements OnInit, OnDestroy {
+export class HeaderComponent implements OnInit {
   loginState: boolean = false;
   currentlyloggedRole: string = 'visitor';
 
@@ -25,30 +26,25 @@ export class HeaderComponent implements OnInit, OnDestroy {
   private loginRoleSubscription: Subscription;
 
   constructor(
-    private userService: UserServiceService,
-    private authService: AuthServiceService,
-    private loginDataService: LoginDataService,
+    // private loginDataService: LoginDataService,
+    private utilService: UtilServiceService,
     private router: Router,
     private messageService: MessageService
   ) {}
 
   ngOnInit() {
-    this.loginDataService.currentData.subscribe((data) => {
-      debugger
-      this.currentlyloggedRole = data.CurrentloggedRole;
-    
-      this.loginState = data.loggedIn;
-      console.log('Role:', this.currentlyloggedRole);
-      console.log('Logged In:', this.loginState);
+    this.setRole();
+    this.utilService.roleChanged.subscribe(role => {
+      this.currentlyloggedRole = role;
     });
   }
 
-  ngOnDestroy() {
-    if (this.loginStateSubscription) {
-      this.loginStateSubscription.unsubscribe();
-    }
-    if (this.loginRoleSubscription) {
-      this.loginRoleSubscription.unsubscribe();
+  setRole() {
+    const role = this.utilService.getRoleFromToken();
+    if (role) {
+      this.currentlyloggedRole = role;
+    } else {
+      this.currentlyloggedRole = 'visitor';
     }
   }
 

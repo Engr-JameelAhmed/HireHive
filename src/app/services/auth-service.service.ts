@@ -27,10 +27,6 @@ export class AuthServiceService {
 
 
   login(user: UserResponse): Observable<any>{
-    // this.data = this.http.post<any>('http://localhost:9090/api/auth/login',user);
-    // debugger
-
-    // console.log(this.data);
     return this.http.post<any>('http://localhost:9090/api/auth/login',user);
   }
 

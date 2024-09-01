@@ -2,7 +2,7 @@
 .background-container {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 120vh;
   overflow: hidden;
 }
 
@@ -32,7 +32,7 @@
 
 /* Positioning for animations */
 #signup-animations {
-  width: 40%;
+  width: 30%;
   height: 50%;
   position: absolute;
   top: 50%;
@@ -80,9 +80,19 @@ input[type="password"] {
   border-radius: 4px;
   box-sizing: border-box;
 }
+.genderOption{
+  width: 100%;
+}
+
 
 input[type="text"]:focus,
 input[type="password"]:focus {
+  border-color: #007bff; /* Bootstrap primary color */
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+}
+input[type="text"]:focus,
+input[type="gender"]:focus {
   border-color: #007bff; /* Bootstrap primary color */
   outline: none;
   box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);

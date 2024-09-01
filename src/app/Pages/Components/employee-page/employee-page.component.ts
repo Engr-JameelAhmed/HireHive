@@ -32,12 +32,7 @@ export class EmployeePageComponent implements OnInit{
   jobs: Jobs[] = [];
   private readonly _formBuilder = inject(FormBuilder);
   filteredJobs: Jobs[];
-  value: string | undefined;
-
-  value2: string | undefined;
-  longText = `The Chihuahua is a Mexican breed of toy dog. It is named for the
-  Mexican state of Chihuahua and is among the smallest of all dog breeds. It is
-  usually kept as a companion animal or for showing.`;
+  value: string | undefined; 
 
   typeSelectedValue: string;
   categorySelectedValue: string;

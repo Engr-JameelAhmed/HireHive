@@ -1,6 +1,8 @@
-.first{
-
+.container-fluid{
+  display: flex;
+  margin-top: 10px;
 }
+
 .sec{
   color: #ffa601;
 }

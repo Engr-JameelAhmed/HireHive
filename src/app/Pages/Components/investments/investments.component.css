@@ -1,13 +1,8 @@
 .title{
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-  margin-bottom: -70px;
-}
-.title h1{
   font-size: 40px;
-  color: #ffa601;
   font-weight: 500;
+  font-family:   'Lucida Sans', Arial, sans-serif;
+  color: #ffa601;
 }
 .page {
   display: flex;
@@ -15,7 +10,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 90px;
-  max-width: 1200px;
+  max-width: 700px;
   margin: 120px auto;
 }
 
@@ -24,9 +19,21 @@
 }
 
 .custom-card {
-  background-color: lightblue !important;
-  padding: 16px;
-  border-radius: 8px;
+  background-color: lightblue !important; /* Set your desired background color */
+  padding: 16px; /* Add some padding for a better look */
+  border-radius: 8px; /* Optional: Add border-radius for rounded corners */
+}
+.card1{
+}
+
+.btns{
+  display: flex;
+  justify-content: space-evenly;
 }
 
 
+.insideDetails{
+  font-size: larger;
+  font-weight: 600;
+  margin-right: 15px;
+}

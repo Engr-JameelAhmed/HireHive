@@ -22,7 +22,6 @@ export interface JwtToken {
   styleUrls: ['./sign-in.component.css'],
 })
 export class SignInComponent implements OnInit {
-  values: string;
   CuurentloggedRole: string;
   loggedIn: boolean;
   // loginStateChanged: EventEmitter<boolean> = new EventEmitter<boolean>();
@@ -44,7 +43,7 @@ export class SignInComponent implements OnInit {
     private fb: FormBuilder,
     private router: Router,
     private userService: UserServiceService,
-    private messageService: MessageService
+    private messageService: MessageService,
   ) {}
   ngOnInit(): void {}
   // or we can directly give access to the control in a method
@@ -71,12 +70,12 @@ export class SignInComponent implements OnInit {
         var a = this.parseJwt(token);
         const roles = a.ROLES;
         this.CuurentloggedRole = roles[0];
-        
+        this.utilService.roleChanged.emit(this.CuurentloggedRole);
         // Update the logged in state
         this.loggedIn = true;
         
         // Call sendData to update the header
-        this.sendData();
+        // this.sendData();
 
         this.messageService.add({
           severity: 'success',
@@ -88,7 +87,7 @@ export class SignInComponent implements OnInit {
         } else if (roles[0] === 'ROLE_EMPLOYER') {
           this.router.navigateByUrl('employerHome');
         } else if (roles[0] === 'ROLE_INVESTOR') {
-          this.router.navigateByUrl('investorHome');
+          this.router.navigateByUrl('investments');
         } else if (roles[0] === 'ROLE_BUSINESSOWNER') {
           this.router.navigateByUrl('business-owner-Home');
         } else {
@@ -122,11 +121,11 @@ export class SignInComponent implements OnInit {
     );
     return JSON.parse(jsonPayload);
   }
-  sendData() {
-    const data = {
-      CurrentloggedRole: this.CuurentloggedRole,
-      loggedIn: this.loggedIn
-    };
-    this.loginDataService.changeData(data);
-  }
+  // sendData() {
+  //   const data = {
+  //     CurrentloggedRole: this.CuurentloggedRole,
+  //     loggedIn: this.loggedIn
+  //   };
+  //   this.loginDataService.changeData(data);
+  // }
 }

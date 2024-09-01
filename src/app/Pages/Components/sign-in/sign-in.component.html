@@ -1,39 +1,3 @@
-<!-- <div id="login-container">
-  <div id="login-animations"></div>
-  <div class="form-container">
-    <form [formGroup]="LoginForm" (ngSubmit)="OnLogin()">
-      <p-card header="Login">
-        <div class="field">
-          <label for="email">Email</label>
-          <input type="text" pInputText formControlName="email" class="w-full" name="email" placeholder="Enter Your Email"/>
-          <small *ngIf="LoginForm.controls['email'].invalid && (LoginForm.controls['email'].dirty || LoginForm.controls['email'].touched)" class="block p-error">
-            <div *ngIf="email.errors?.['required']">
-                Email is required
-            </div>
-            <div *ngIf="email.errors?.['email']">
-              Email should be valid
-            </div>
-          </small>
-          <br>
-        </div>
-        <div class="field">
-          <label for="password">Password</label><br>
-          <input type="password" pInputText formControlName="password" class="w-full" name="password" placeholder="Enter Your Password"/>
-          <small *ngIf="LoginForm.controls['password'].invalid && (LoginForm.controls['password'].dirty || LoginForm.controls['password'].touched)" class="block p-error">
-            <div *ngIf="password.errors?.['required']">
-              Password is required
-            </div>
-          </small>
-        </div>
-        <p-button label="SIGN IN" styleClass="w-full" [disabled]="LoginForm.invalid" type="submit"></p-button>
-        <div class="mt-2">
-          Not a member ? <a routerLink="/signup">SIGN UP</a>
-        </div>
-      </p-card>
-    </form>
-  </div>
-</div> -->
-
 
 
 <div id="login-container">

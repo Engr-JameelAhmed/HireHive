@@ -35,10 +35,25 @@ export class HomeComponent  implements AfterViewInit{
     });
   }
 
-  role(data: string): void{
-    console.log('Url contain', data);
-
-    this.router.navigateByUrl('sign-up/' + data);
+  role(roleType: string): void {
+    let roleVar = '';
+    switch (roleType) {
+      case 'Employee':
+        roleVar = 'ROLE_EMPLOYEE';
+        break;
+      case 'Employer':
+        roleVar = 'ROLE_EMPLOYER';
+        break;
+      case 'Investor':
+        roleVar = 'ROLE_INVESTOR';
+        break;
+      case 'Owner':
+        roleVar = 'ROLE_OWNER';
+        break;
+    }
+  
+    // Pass the roleVar as a query parameter
+    this.router.navigate(['sign-up', roleType], { queryParams: { role: roleVar } });
   }
 
 }

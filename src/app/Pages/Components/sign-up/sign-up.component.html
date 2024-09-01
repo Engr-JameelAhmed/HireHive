@@ -5,37 +5,28 @@
     <form [formGroup]="SignUpForm" (ngSubmit)="submitDetails()">
       <p-card [header]="selectedRole ? 'Sign Up ' + selectedRole : 'Sign Up'" class="p-card">
         <div class="field">
-          <label for="fullName">FullName</label>
-          <input type="text" pInputText formControlName="fullName" class="w-full" name="fullName" placeholder="Enter Your FullName"/>
-          <small *ngIf="SignUpForm.controls['fullName'].invalid && (SignUpForm.controls['fullName'].dirty || SignUpForm.controls['fullName'].touched)" class="block p-error">
-              <div *ngIf="fullName.errors?.['required']">
-                  FullName is required
-              </div>
-              <div *ngIf="fullName.errors?.['pattern']">
-                Enter a valid Name
+          <input type="text" pInputText formControlName="username" class="w-full" name="username"
+            placeholder="Enter Your UserName" />
+          <small *ngIf="
+              SignUpForm.controls['username'].invalid &&
+              (SignUpForm.controls['username'].dirty ||
+                SignUpForm.controls['username'].touched)
+            " class="block p-error">
+            <div *ngIf="username.errors?.['required']">
+              FullName is required
             </div>
+            <div *ngIf="username.errors?.['pattern']">Enter a valid Name</div>
           </small>
-          <br>
+          <br />
         </div>
         <div class="field">
-          <label for="email">Email</label>
-          <input type="text" pInputText formControlName="email" class="w-full" name="email" placeholder="Enter Your Email"/>
-          <small *ngIf="SignUpForm.controls['email'].invalid && (SignUpForm.controls['email'].dirty || SignUpForm.controls['email'].touched)" class="block p-error">
-              <div *ngIf="email.errors?.['required']">
-                  Email is required
-              </div>
-              <div *ngIf="email.errors?.['email']">
-                Email should be valid
-            </div>
-          </small>
-          <br>
-        </div>
-        <div class="field">
-          <label for="password">Password</label><br>
-          <input type="password" pInputText formControlName="password" class="w-full" name="password" placeholder="Enter Your Password"/>
-          <small *ngIf="SignUpForm.controls['password'].invalid && (SignUpForm.controls['password'].dirty || SignUpForm.controls['password'].touched)" class="block p-error">
+          <input type="password" pInputText formControlName="password" class="w-full" name="password"
+            placeholder="Enter Your Password" />
+          <small
+            *ngIf="SignUpForm.controls['password'].invalid && (SignUpForm.controls['password'].dirty || SignUpForm.controls['password'].touched)"
+            class="block p-error">
             <div *ngIf="password.errors?.['required']">
-                Password is required
+              Password is required
             </div>
             <div *ngIf="password.errors?.['password']">
               Password should be valid
@@ -43,24 +34,81 @@
           </small>
         </div>
         <div class="field">
-          <label for="confirmPassword">Confirm Password</label><br>
-          <input type="password" pInputText formControlName="confirmPassword" class="w-full" name="confirmPassword" placeholder="Enter Your ConfirmPassword"/>
-          <small *ngIf="SignUpForm.controls['confirmPassword'].invalid && (SignUpForm.controls['confirmPassword'].dirty || SignUpForm.controls['confirmPassword'].touched)" class="block p-error">
+          <input type="password" pInputText formControlName="confirmPassword" class="w-full" name="confirmPassword"
+            placeholder="Enter Your ConfirmPassword" />
+          <small
+            *ngIf="SignUpForm.controls['confirmPassword'].invalid && (SignUpForm.controls['confirmPassword'].dirty || SignUpForm.controls['confirmPassword'].touched)"
+            class="block p-error">
             <div *ngIf="confirmPassword.errors?.['required']">
-                Confirm the Password
+              Confirm the Password
             </div>
             <div *ngIf="confirmPassword.errors?.['confirmPassword']">
               Confirm Password should should match the original Password
             </div>
           </small>
-          <small *ngIf="SignUpForm.errors?.['PasswordMisMatch'] && confirmPassword.valid && password.valid" class="block p-error">
-              Password should match
+          <small *ngIf="SignUpForm.errors?.['PasswordMisMatch'] && confirmPassword.valid && password.valid"
+            class="block p-error">
+            Password should match
           </small>
         </div>
+        <div class="field">
+          <input type="text" pInputText formControlName="email" class="w-full" name="email"
+            placeholder="Enter Your Email" />
+          <small
+            *ngIf="SignUpForm.controls['email'].invalid && (SignUpForm.controls['email'].dirty || SignUpForm.controls['email'].touched)"
+            class="block p-error">
+            <div *ngIf="email.errors?.['required']">
+              Email is required
+            </div>
+            <div *ngIf="email.errors?.['email']">
+              Email should be valid
+            </div>
+          </small>
+          <br>
+        </div>
+        
+        <div class="field">
+          <select pInputText formControlName="gender" class="w-full genderOption" name="gender">
+            <option value="">Select Gender</option>
+            <option value="MALE">Male</option>
+            <option value="FEMALE">Female</option>
+          </select>
+          <small
+            *ngIf="SignUpForm.controls['gender'].invalid && (SignUpForm.controls['gender'].dirty || SignUpForm.controls['gender'].touched)"
+            class="block p-error">
+            <div *ngIf="SignUpForm.controls['gender'].errors?.['required']">
+              Gender is required
+            </div>
+          </small>
+          <br>
+        </div>
+        <div class="field">
+          <input type="text" pInputText formControlName="role" class="w-full" name="role" [attr.disabled]="true" />
+          <small
+            *ngIf="SignUpForm.controls['role'].invalid && (SignUpForm.controls['role'].dirty || SignUpForm.controls['role'].touched)"
+            class="block p-error">
+            <div *ngIf="role.errors?.['required']">
+              Role is required
+            </div>
+          </small>
+          <br>
+        </div>
+        <!-- <div class="field">
+          <label for="cv">Upload CV (optional):</label>
+          <input type="file" (change)="onFileSelected($event)" />
+          <small
+            *ngIf="SignUpForm.controls['cv'].invalid && (SignUpForm.controls['cv'].dirty || SignUpForm.controls['cv'].touched)"
+            class="block p-error">
+            <div *ngIf="cv.errors?.['required']">
+              CV is required
+            </div>
+          </small>
+          <br>
+        </div> -->
         <p-button label="Register" styleClass="w-full" [disabled]="SignUpForm.invalid" type="submit"></p-button>
         <div class="mt-2">
           Already a member ? <a routerLink="/sign-in">Login</a>
-      </div>
+        </div>
       </p-card>
     </form>
   </div>
