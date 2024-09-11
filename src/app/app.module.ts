@@ -54,7 +54,9 @@ import { InvestmentProposalsComponent } from './Pages/Components/investment-prop
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { DropdownModule } from 'primeng/dropdown';
-import { CreateBusinessComponent } from './Pages/Components/create-business/create-business.component'; 
+import { CreateBusinessComponent } from './Pages/Components/create-business/create-business.component';
+import { AppliedJobsComponent } from './Pages/Components/applied-jobs/applied-jobs.component'; 
+
 
 @NgModule({
   declarations: [
@@ -83,6 +85,7 @@ import { CreateBusinessComponent } from './Pages/Components/create-business/crea
     InvestmentsComponent,
     InvestmentProposalsComponent,
     CreateBusinessComponent,
+    AppliedJobsComponent,
 
 
   ],

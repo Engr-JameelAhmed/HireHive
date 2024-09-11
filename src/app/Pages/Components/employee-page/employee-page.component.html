@@ -65,6 +65,7 @@
 
   <div class="search flex flex-wrap justify-content-center gap-3">
     <button mat-raised-button color="primary" (click)="findJobByOptons()">Find</button>
+    <button mat-raised-button class="custom-green-button" (click)="clearFilters()">Clear</button>
     <hr>
     <span class="p-input-icon-right">
       <i class="pi pi-search"></i>
@@ -76,13 +77,13 @@
   <section class="example-section" [formGroup]="toppings">
     <!-- <h4>Select your toppings:</h4> -->
     <p><mat-checkbox formControlName="IT">IT</mat-checkbox></p>
-    <p><mat-checkbox formControlName="Marketing">Marketing</mat-checkbox></p>
-    <p><mat-checkbox formControlName="Finance">Finance</mat-checkbox></p>
-    <p><mat-checkbox formControlName="Managment">Managment</mat-checkbox></p>
-    <p><mat-checkbox formControlName="Business">Business</mat-checkbox></p>
-    <p><mat-checkbox formControlName="ComputerScience">Computer Science</mat-checkbox></p>
-    <p><mat-checkbox formControlName="Psychology">Psychology</mat-checkbox></p>
-    <p><mat-checkbox formControlName="SoftwareEngineering">Software Engineering</mat-checkbox></p>
+    <p><mat-checkbox formControlName="MARKETING">MARKETING</mat-checkbox></p>
+    <p><mat-checkbox formControlName="FINANCE">FINANCE</mat-checkbox></p>
+    <p><mat-checkbox formControlName="MANAGMENT">MANAGMENT</mat-checkbox></p>
+    <p><mat-checkbox formControlName="BUSINESS">BUSINESS</mat-checkbox></p>
+    <p><mat-checkbox formControlName="COMPUTER_SCIENCE">COMPUTER SCIENCE</mat-checkbox></p>
+    <p><mat-checkbox formControlName="PYSCHOLOGY">PYSCHOLOGY</mat-checkbox></p>
+    <p><mat-checkbox formControlName="SOFTWARE_ENGINEERING">SOFTWARE ENGINEERING</mat-checkbox></p>
   </section>
 </div>
 

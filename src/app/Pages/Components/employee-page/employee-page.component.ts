@@ -1,12 +1,10 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { JobDetailsComponent } from '../job-details/job-details.component';
 import { JobService } from 'src/app/services/jobs-service.service';
 import { Jobs } from 'src/app/Models/Jobs';
 import { FormBuilder } from '@angular/forms';
 import { filter } from 'rxjs';
-
-
 
 interface Type {
   jobType: string;
@@ -21,18 +19,17 @@ interface workType {
   jobWorkType: string;
 }
 
-
 @Component({
   selector: 'app-employee-page',
   templateUrl: './employee-page.component.html',
   styleUrls: ['./employee-page.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class EmployeePageComponent implements OnInit{
+export class EmployeePageComponent implements OnInit {
+  
   jobs: Jobs[] = [];
-  private readonly _formBuilder = inject(FormBuilder);
-  filteredJobs: Jobs[];
-  value: string | undefined; 
+  filteredJobs: Jobs[] = [];
+  value: string | undefined;
 
   typeSelectedValue: string;
   categorySelectedValue: string;
@@ -40,69 +37,76 @@ export class EmployeePageComponent implements OnInit{
   workTypeSelectedValue: string;
 
   type: Type[] = [
-    {jobType: 'ON_SITE'},
-    {jobType: 'REMOTE'},
-    {jobType: 'HYBRID'}
-    
+    { jobType: 'ON_SITE' },
+    { jobType: 'REMOTE' },
+    { jobType: 'HYBRID' }
   ];
+
   category: Category[] = [
-    {jobCategory: 'IT'},
-    {jobCategory: 'Marketing'},
-    {jobCategory: 'Finance'},
-    {jobCategory: 'Managment'},
-    {jobCategory: 'Business'},
-    {jobCategory: 'ComScience'},
-    {jobCategory: 'Software Engineering'},
-    {jobCategory: 'Psychology'}
-
+    { jobCategory: 'IT' },
+    { jobCategory: 'MARKETING' },
+    { jobCategory: 'FINANCE' },
+    { jobCategory: 'MANAGMENT' },
+    { jobCategory: 'BUSINESS' },
+    { jobCategory: 'COMPUTER_SCIENCE' },
+    { jobCategory: 'SOFTWARE_ENGINEERING' },
+    { jobCategory: 'PYSCHOLOGY' }
   ];
+
   location: Location[] = [
-    {jobLocation: 'Karachi'},
-    {jobLocation: 'Quetta'},
-    {jobLocation: 'Nushki'},
-    {jobLocation: 'Dalbandin'},
-    {jobLocation: 'Karachi'},
-    {jobLocation: 'Quetta'},
-    {jobLocation: 'Nushki'},
-    {jobLocation: 'Dalbandin'}
-  ];
-  workype: workType[] = [
-    {jobWorkType: 'PART_TIME'},
-    {jobWorkType: 'FULL_TIME'},
-    {jobWorkType: 'CONTRACT'}
+    { jobLocation: 'KARACHI' },
+    { jobLocation: 'QUETTA' },
+    { jobLocation: 'NUSHKI' },
+    { jobLocation: 'DALBANDIN' }
   ];
 
+  workype: workType[] = [
+    { jobWorkType: 'PART_TIME' },
+    { jobWorkType: 'FULL_TIME' },
+    { jobWorkType: 'CONTRACT' }
+  ];
+
+  readonly toppings = this._formBuilder.group({
+    IT: false,
+    MARKETING: false,
+    FINANCE: false,
+    MANAGMENT: false,
+    BUSINESS: false,
+    COMPUTER_SCIENCE: false,
+    PYSCHOLOGY: false,
+    SOFTWARE_ENGINEERING: false,
+  });
 
   constructor(
     public dialog: MatDialog,
     private jobService: JobService,
-    private cdr: ChangeDetectorRef
-
+    private cdr: ChangeDetectorRef,
+    private _formBuilder: FormBuilder
   ) {}
 
-
   ngOnInit(): void {
-    this.jobService.getAllJobs().subscribe(
-      (data: Jobs[]) => {
-        this.jobs = data;
-        this.filteredJobs = this.jobs; // Initialize with all jobs
-        console.log('Jobs from service:', this.jobs);
-        this.cdr.detectChanges(); // Force change detection
-      },
-      (error) => {
-        console.error('Error fetching jobs:', error);
-      }
-    );
+    this.getAllJobs();
+    
+    // Subscribe to checkbox changes
+    this.toppings.valueChanges.subscribe(() => {
+      this.applyFilters();
+    });
   }
-  findJobByOptons(){
-    this.filteredJobs = this.jobs.filter(job => 
-      (!this.typeSelectedValue || job.type === this.typeSelectedValue) &&
-      (!this.categorySelectedValue || job.category === this.categorySelectedValue) &&
-      (!this.locationSelectedValue || job.location === this.locationSelectedValue) &&
-      (!this.workTypeSelectedValue || job.workType === this.workTypeSelectedValue)
-    );
-    console.log('Filtered Jobs are : ==> ',this.filteredJobs);
+
+  findJobByOptons() {
+    this.applyFilters();
   }
+
+  clearFilters() {
+    this.filteredJobs = [];
+    this.typeSelectedValue = '';
+    this.categorySelectedValue = '';
+    this.locationSelectedValue = '';
+    this.workTypeSelectedValue = '';
+    this.toppings.reset();
+    this.getAllJobs();
+  }
+
   searchJobs(): void {
     if (this.value) {
       this.filteredJobs = this.jobs.filter(job =>
@@ -111,6 +115,22 @@ export class EmployeePageComponent implements OnInit{
     } else {
       this.filteredJobs = [...this.jobs]; // Reset to include all jobs
     }
+  }
+
+  applyFilters() {
+    const selectedCategories = Object.keys(this.toppings.controls).filter(
+      key => this.toppings.controls[key].value
+    );
+    
+    this.filteredJobs = this.jobs.filter(job => 
+      (!this.typeSelectedValue || job.type === this.typeSelectedValue) &&
+      (!this.categorySelectedValue || job.category === this.categorySelectedValue) &&
+      (!this.locationSelectedValue || job.location === this.locationSelectedValue) &&
+      (!this.workTypeSelectedValue || job.workType === this.workTypeSelectedValue) &&
+      (selectedCategories.length === 0 || selectedCategories.includes(job.category))
+    );
+    
+    console.log('Filtered Jobs are : ==> ', this.filteredJobs);
   }
 
   details(job: any) {
@@ -123,15 +143,17 @@ export class EmployeePageComponent implements OnInit{
     });
   }
 
-  readonly toppings = this._formBuilder.group({
-    IT: false,
-    Marketing: false,
-    Finance: false,
-    Managment: false,
-    Business: false,
-    ComputerScience: false,
-    Psychology: false,
-    SoftwareEngineering: false,
-  });
+  getAllJobs() {
+    this.jobService.getAllJobs().subscribe(
+      (data: Jobs[]) => {
+        this.jobs = data;
+        this.filteredJobs = this.jobs; // Initialize with all jobs
+        console.log('Jobs from service:', this.jobs);
+        this.cdr.detectChanges(); // Force change detection
+      },
+      (error) => {
+        console.error('Error fetching jobs:', error);
+      }
+    );
+  }
 }
-

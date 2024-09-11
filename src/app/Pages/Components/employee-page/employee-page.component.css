@@ -67,3 +67,10 @@
   padding: 15px;
   font-size: 12px;
 }
+
+
+.custom-green-button {
+  background-color: green !important;
+  color: white !important;
+  margin-left: 5px;
+}

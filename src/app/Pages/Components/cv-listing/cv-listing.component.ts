@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { MessageService } from 'primeng/api';
 import { CvListingService } from 'src/app/services/cv-listing.service';
 
 @Component({
@@ -13,13 +14,16 @@ export class CvListingComponent implements OnInit{
 
   cvs : any[] = [];
 
-  constructor(private cvListing:CvListingService){}
+  downloadCvPath: string;
+  
+
+  constructor(private cvListing:CvListingService,private messageService: MessageService){}  
 
   ngOnInit(): void {
     this.cvListing.getAllCvOfLoggedEmployer().subscribe(
       (data: any[]) => {
         this.cvs = data;
-        console.log('CVs loaded:', this.cvs);
+        console.log('CVs loaded:', this.cvs); 
         // Trigger change detection if needed
       },
       error => {
@@ -35,5 +39,45 @@ export class CvListingComponent implements OnInit{
 
   showDialog() {
     this.visible = true;
+
 }
+
+// Method to handle CV download
+    downloadCV(userId: number) {
+      this.cvListing.downloadCV(userId).subscribe(
+        (blob: Blob) => {
+          // Create a URL for the blob
+          const url = window.URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = `CV_${userId}.pdf`;  // You might want to modify the filename
+          a.click();
+          window.URL.revokeObjectURL(url);
+        },
+        error => {
+          console.error('Error downloading CV:', error);
+        }
+      );
+    }
+    rejectApplication(applicationId){
+      this.cvListing.updateApplicationStatus(applicationId).subscribe({
+        next: () => {
+          debugger
+          console.log('Application status updated successfully');
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Rejected Successful',
+            detail: 'Application is rejected',
+          });
+        },
+        error: (err) => {
+          console.error('Error updating application status', err);
+          this.messageService.add({
+            severity: 'danger',
+            summary: 'Something went wrong',
+            detail: 'Application is not rejected',
+          });
+        }
+      });
+    }
 }

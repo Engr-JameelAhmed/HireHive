@@ -2,8 +2,10 @@
   <div class="upload-file">
     <h1>Upload Your CV</h1>
     <div class="card flex justify-content-center">
-        <p-toast></p-toast>
-        <p-fileUpload mode="basic" chooseLabel="Choose" name="demo[]"  accept=".pdf" [maxFileSize]="1000000" (onUpload)="onUpload($event)"></p-fileUpload>
+      <p-toast></p-toast>
+      <p-fileUpload #fileUploader mode="basic" chooseLabel="Choose File" name="file" accept=".pdf"
+        [maxFileSize]="1000000" (onSelect)="onFileSelect($event)" [auto]="false">
+      </p-fileUpload>
     </div>
   </div>
   <div class="upload-file">
@@ -15,4 +17,3 @@
     </section>
   </div>
 </div>
-

@@ -10,7 +10,7 @@ export class EmployerPageComponent {
 
   constructor(
     private router: Router
-
+  
   ){}
 
 
