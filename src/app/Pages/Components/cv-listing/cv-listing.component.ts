@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { CvListingService } from 'src/app/services/cv-listing.service';
 
@@ -17,7 +18,7 @@ export class CvListingComponent implements OnInit{
   downloadCvPath: string;
   
 
-  constructor(private cvListing:CvListingService,private messageService: MessageService){}  
+  constructor(private cvListing:CvListingService,private messageService: MessageService, private router: Router){}  
 
   ngOnInit(): void {
     this.cvListing.getAllCvOfLoggedEmployer().subscribe(
@@ -62,13 +63,13 @@ export class CvListingComponent implements OnInit{
     rejectApplication(applicationId){
       this.cvListing.updateApplicationStatus(applicationId).subscribe({
         next: () => {
-          debugger
           console.log('Application status updated successfully');
           this.messageService.add({
             severity: 'success',
             summary: 'Rejected Successful',
             detail: 'Application is rejected',
           });
+          this.router.navigate(['/cv-listing']);
         },
         error: (err) => {
           console.error('Error updating application status', err);
@@ -77,6 +78,7 @@ export class CvListingComponent implements OnInit{
             summary: 'Something went wrong',
             detail: 'Application is not rejected',
           });
+          this.router.navigate(['/cv-listing']);
         }
       });
     }

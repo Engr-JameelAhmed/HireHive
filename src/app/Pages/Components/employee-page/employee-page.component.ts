@@ -18,7 +18,7 @@ interface Location {
 interface workType {
   jobWorkType: string;
 }
-
+ 
 @Component({
   selector: 'app-employee-page',
   templateUrl: './employee-page.component.html',
@@ -85,7 +85,8 @@ export class EmployeePageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getAllJobs();
+    // this.getAllJobs();
+    this.getAllNotAppliedJobs();
     
     // Subscribe to checkbox changes
     this.toppings.valueChanges.subscribe(() => {
@@ -104,7 +105,8 @@ export class EmployeePageComponent implements OnInit {
     this.locationSelectedValue = '';
     this.workTypeSelectedValue = '';
     this.toppings.reset();
-    this.getAllJobs();
+    // this.getAllJobs();
+    this.getAllNotAppliedJobs();
   }
 
   searchJobs(): void {
@@ -145,6 +147,19 @@ export class EmployeePageComponent implements OnInit {
 
   getAllJobs() {
     this.jobService.getAllJobs().subscribe(
+      (data: Jobs[]) => {
+        this.jobs = data;
+        this.filteredJobs = this.jobs; // Initialize with all jobs
+        console.log('Jobs from service:', this.jobs);
+        this.cdr.detectChanges(); // Force change detection
+      },
+      (error) => {
+        console.error('Error fetching jobs:', error);
+      }
+    );
+  }
+  getAllNotAppliedJobs() {
+    this.jobService.getAllNotJobs().subscribe(
       (data: Jobs[]) => {
         this.jobs = data;
         this.filteredJobs = this.jobs; // Initialize with all jobs

@@ -1,0 +1,26 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 90px;
+    max-width: 1200px;
+    margin: 120px auto;
+  }
+  
+  .card {
+    width: 700px;
+  }
+  
+  .custom-card {
+    background-color: lightblue !important;
+    padding: 16px;
+    border-radius: 8px;
+  }
+  .status{
+    background-color: #f5bc51;
+    color: white;
+    padding: 10px;
+  }
+  
+  

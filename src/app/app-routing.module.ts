@@ -21,6 +21,7 @@ import { InvestmentsComponent } from './Pages/Components/investments/investments
 import { CreateInvestmentComponent } from './Pages/Components/create-investment/create-investment.component';
 import { InvestmentProposalsComponent } from './Pages/Components/investment-proposals/investment-proposals.component';
 import { CreateBusinessComponent } from './Pages/Components/create-business/create-business.component';
+import { AppliedJobsComponent } from './Pages/Components/applied-jobs/applied-jobs.component';
 
 const routes: Routes = [
 
@@ -42,6 +43,7 @@ const routes: Routes = [
    { path: 'businessess', component:  BusinessesComponent},
    { path: 'employeeHome', component:  EmployeePageComponent},
    { path: 'employerHome', component:  EmployerPageComponent},
+   { path: 'appliedJobs', component: AppliedJobsComponent },
    { path: 'employerHome', children: [
     { path: 'cv-listing', component:  CvListingComponent},
     { path: 'job-posting', component:  JobPostingComponent},

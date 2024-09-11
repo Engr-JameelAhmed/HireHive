@@ -44,7 +44,7 @@ export class CvListingService {
   }
 
   updateApplicationStatus(applicationId: number): Observable<void> {
-    return this.http.put<void>(`${this.baseUrl}/${applicationId}/status/reject`, {})
+    return this.http.put<void>(`${this.UpdateApplication}/${applicationId}/status/reject`, {});
     };
   }
 
