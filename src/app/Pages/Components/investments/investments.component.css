@@ -1,3 +1,24 @@
+.investmentPage{
+  position: relative;
+  background-color: transparent; 
+  overflow: hidden; 
+}
+
+.investmentPage::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../../../assets/BgImages/Investor.jpeg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+  z-index: -1; 
+}
+
+
 .title{
   font-size: 40px;
   font-weight: 500;

@@ -55,7 +55,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { DropdownModule } from 'primeng/dropdown';
 import { CreateBusinessComponent } from './Pages/Components/create-business/create-business.component';
-import { AppliedJobsComponent } from './Pages/Components/applied-jobs/applied-jobs.component'; 
+import { AppliedJobsComponent } from './Pages/Components/applied-jobs/applied-jobs.component';
+import { BuildSkillsComponent } from './Pages/Components/build-skills/build-skills.component'; 
 
 
 @NgModule({
@@ -86,6 +87,7 @@ import { AppliedJobsComponent } from './Pages/Components/applied-jobs/applied-jo
     InvestmentProposalsComponent,
     CreateBusinessComponent,
     AppliedJobsComponent,
+    BuildSkillsComponent,
 
 
   ],

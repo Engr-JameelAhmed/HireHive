@@ -2,6 +2,34 @@
   box-sizing: border-box;
 }
 
+.empHome {
+  position: relative;
+  background-color: transparent; /* Ensure no default background color is applied */
+  overflow: hidden; /* Ensure that the pseudo-element does not overflow */
+}
+
+.empHome::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../../../assets/BgImages/Employee.jpeg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+  z-index: -1; 
+}
+
+.main,
+.jobs,
+.search,
+.example-section,
+.card-container,
+.card {
+  position: relative; /* Make sure these elements are positioned above the pseudo-element */
+}
 .jobs{
   display: flex;
   gap: 85px;
@@ -26,65 +54,51 @@
   /* width: 200px;  */
 }
 
-.card-container {
-  display: flex;
-  justify-content: center; 
-  gap: 20px; 
-}
-
-.card {
-  width: 300px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  border-radius: 8px;
-  padding: 16px; 
-  background-color: #f3e9e9; 
-  text-align: center;
-  margin-bottom: 30px;
-}
-@media (max-width: 1050px) {
-  
-  .card{
-    width: 250px;
-    height: 200px;
-  }
-  .jobs{
-    display: flex;
-    gap: 55px;
-    /* margin-top: 140px;
-    margin-left: 80px; */
-  }
-}
-
-@media (max-width: 800px) {
   .card-container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+    gap: 20px; /* Space between the cards */
+    justify-content: center; /* Center the cards horizontally */
   }
-  .card {
-    width: 400px;
-    height: 200px;
-  }
-}
-@media (max-width: 650px) {
-  .card-container {
-    
-  }
+
   .card {
     width: 300px;
-    height: 200px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 16px; 
+    background-color: #f3e9e9; 
+    text-align: center;
+    margin-bottom: 30px;
   }
-}
-@media (max-width: 330px) {
-  .card-container {
-    
+
+  /* Responsive design adjustments */
+  @media (max-width: 1050px) {
+    .card {
+      width: 250px;
+      height: 200px;
+    }
   }
-  .card {
-    width: 250px;
-    flex: 1 1 100%;
+
+  @media (max-width: 800px) {
+    .card {
+      width: 400px;
+      height: 200px;
+    }
   }
-}
+
+  @media (max-width: 650px) {
+    .card {
+      width: 300px;
+      height: 200px;
+    }
+  }
+
+  @media (max-width: 330px) {
+    .card {
+      width: 250px;
+      height: 200px;
+    }
+  }
   
 .example-section {
 

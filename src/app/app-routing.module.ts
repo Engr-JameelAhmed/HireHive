@@ -22,6 +22,7 @@ import { CreateInvestmentComponent } from './Pages/Components/create-investment/
 import { InvestmentProposalsComponent } from './Pages/Components/investment-proposals/investment-proposals.component';
 import { CreateBusinessComponent } from './Pages/Components/create-business/create-business.component';
 import { AppliedJobsComponent } from './Pages/Components/applied-jobs/applied-jobs.component';
+import { BuildSkillsComponent } from './Pages/Components/build-skills/build-skills.component';
 
 const routes: Routes = [
 
@@ -44,6 +45,7 @@ const routes: Routes = [
    { path: 'employeeHome', component:  EmployeePageComponent},
    { path: 'employerHome', component:  EmployerPageComponent},
    { path: 'appliedJobs', component: AppliedJobsComponent },
+   { path: 'buildSkills', component: BuildSkillsComponent },
    { path: 'employerHome', children: [
     { path: 'cv-listing', component:  CvListingComponent},
     { path: 'job-posting', component:  JobPostingComponent},

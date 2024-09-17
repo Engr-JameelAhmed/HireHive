@@ -1,29 +1,23 @@
-<div class="create-upload">
-  <div class="upload-file">
-    <div class="card flex justify-content-center">
-      <p-toast></p-toast>
+<div class="employeeProfilePage">
+  <div class="create-upload">
+    <div class="upload-file" (click)="openUrl('file1')">
+      <h1>Canva</h1>
+      <!-- <div class="card flex justify-content-center">
+        <h1 href="https://www.canva.com/resumes/templates/" target="_blank">CANVA</h1>
+        <p-toast></p-toast>
+      </div> -->
     </div>
-  </div>
-  <div class="upload-file">
-    <div class="card flex justify-content-center">
-      <p-toast></p-toast>
+    <div class="upload-file" (click)="openUrl('file2')">
+      <h1>Zety</h1>
+      <!-- <div class="card flex justify-content-center">
+        <p-toast></p-toast>
+      </div> -->
     </div>
-  </div>
-  <div class="upload-file">
-    <!-- <h1>Upload Your CV</h1> -->
-    <div class="card flex justify-content-center">
-      <p-toast></p-toast>
-      <!-- <p-fileUpload #fileUploader mode="basic" chooseLabel="Choose File" name="file" accept=".pdf"
-        [maxFileSize]="1000000" (onSelect)="onFileSelect($event)" [auto]="false">
-      </p-fileUpload> -->
+    <div class="upload-file" (click)="openUrl('file3')">
+      <h1>Resume.io</h1>
+      <!-- <div class="card flex justify-content-center">
+        <p-toast></p-toast>
+      </div> -->
     </div>
-  </div>
-  <div class="upload-file">
-    <!-- <h1>Create a CV</h1> -->
-    <section>
-      <div class="example-button-row">
-        <!-- <button class="btn custom-btn" mat-raised-button color="primary">Create</button> -->
-      </div>
-    </section>
   </div>
 </div>

@@ -16,6 +16,14 @@ export class EmployeeProfileComponent implements OnInit {
 
   // @ViewChild('fileUploader') fileUploader!: FileUpload;
 
+
+  private urls: { [key: string]: string } = {
+    'file1': 'https://www.canva.com/resumes/templates/',  // URL for the first div
+    'file2': 'https://zety.com/resume-builder',                 // URL for the second div (replace with actual URL)
+    'file3': 'https://resume.io/app/create-resume'                  // URL for the third div (replace with actual URL)
+  };
+
+
   constructor(
     private messageService: MessageService, 
     private route: ActivatedRoute, 
@@ -23,51 +31,13 @@ export class EmployeeProfileComponent implements OnInit {
     private router: Router) {}
 
   ngOnInit(): void {
-    // Get the job ID from the query parameters
-    // this.route.queryParams.subscribe(params => {
-    //   this.jobId = params['jobId'] || null;
-    // });
+    
   }
 
-  // handleFileUpload() {
-  //   if (this.selectedFile) {
-  //     this.cvListing.updateUserCv(this.selectedFile).subscribe(
-  //       (event: HttpEvent<any>) => {
-  //         if (event.type === HttpEventType.UploadProgress && event.total) {
-  //           const progress = Math.round((100 * event.loaded) / event.total);
-  //           console.log(`Upload progress: ${progress}%`);
-  //         } else if (event instanceof HttpResponse) {  
-  //           console.log('Upload success:', event.body);
-  //           this.messageService.add({ severity: 'success', summary: 'Success', detail: 'CV uploaded successfully!' });
-
-  //            // Navigate to employeeHome on success
-  //            this.router.navigate(['/employeeHome']);
-
-  //           // Reset file input
-  //           this.fileUploader.clear();
-  //           this.selectedFile = null;
-  //         }
-  //       },
-  //       error => {
-  //         console.error('Upload error:', error);
-  //         this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Failed to upload CV.' });
-  //       }
-  //     );
-  //   } else {
-  //     this.messageService.add({ severity: 'warn', summary: 'No File Selected', detail: 'Please select a file before uploading.' });
-  //   }
-  // }
-
-  // applyForJobWithCv(jobId: string, file: File) {
-  //   // Logic to send the job application with the uploaded CV
-  //   console.log('Applying for job:', jobId, 'with file:', file.name);
-  //   this.messageService.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded and Applied for Job' });
-  // }
-
-  // onFileSelect(event: { files: File[] }) {
-  //   // Get the selected file
-  //   this.selectedFile = event.files[0];
-  //   // Call handleFileUpload when a file is selected
-  //   this.handleFileUpload();
-  // }
+  openUrl(fileId: string): void {
+    const url = this.urls[fileId];
+    if (url) {
+      window.open(url, '_blank');
+    }
+  }
 }

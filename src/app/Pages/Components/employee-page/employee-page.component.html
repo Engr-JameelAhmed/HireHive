@@ -1,117 +1,84 @@
-
-
-
-<div class="main">
-  <div class="jobs">
-    <form>
-      <mat-form-field>
-        <mat-label>Job Type</mat-label>
-        <mat-select [(ngModel)]="typeSelectedValue" name="job">
-          <mat-option
-            class="inp"
-            *ngFor="let food of type"
-            [value]="food.jobType"
-            >{{ food.jobType }}</mat-option
-          >
-        </mat-select>
-      </mat-form-field>
-      <p></p>
-      <mat-form-field>
-        <mat-label>Category</mat-label>
-        <mat-select [(ngModel)]="categorySelectedValue" name="category">
-          <mat-option
-            class="inp"
-            *ngFor="let food of category"
-            [value]="food.jobCategory"
-            >{{ food.jobCategory }}</mat-option
-          >
-        </mat-select>
-      </mat-form-field>
-      <p></p>
-    </form>
-    <form>
-      <mat-form-field>
-        <mat-label>Location</mat-label>
-        <mat-select [(ngModel)]="locationSelectedValue" name="location" class="inp">
-          <mat-option
-            class="inp"
-            *ngFor="let food of location"
-            [value]="food.jobLocation"
-            >{{ food.jobLocation }}</mat-option
-          >
-        </mat-select>
-      </mat-form-field>
-
-      <p></p>
-      <mat-form-field>
-        <mat-label>Work</mat-label>
-        <mat-select [(ngModel)]="workTypeSelectedValue" name="work">
-          <mat-option
-            class="inp"
-            *ngFor="let food of workype"
-            [value]="food.jobWorkType"
-            >{{ food.jobWorkType }}</mat-option
-          >
-        </mat-select>
-      </mat-form-field>
-      <p></p>
-    </form>
-  </div>
-
-  <div class="search">
-    <button mat-raised-button color="primary" (click)="findJobByOptons()">Find</button>
-    <button mat-raised-button class="custom-green-button" (click)="clearFilters()">Clear</button>
-    <hr>
-    <span class="p-input-icon-right">
-      <i class="pi pi-search"></i>
-      <input type="text" pInputText [(ngModel)]="value" (ngModelChange)="searchJobs()" class="custom-width" placeholder="Search for a Job"/>
-    </span>
-  </div>
-  <section class="example-section" [formGroup]="toppings"> 
-    <p><mat-checkbox formControlName="IT">IT</mat-checkbox></p>
-    <p><mat-checkbox formControlName="MARKETING">MARKETING</mat-checkbox></p>
-    <p><mat-checkbox formControlName="FINANCE">FINANCE</mat-checkbox></p>
-    <p><mat-checkbox formControlName="MANAGMENT">MANAGMENT</mat-checkbox></p>
-    <p><mat-checkbox formControlName="BUSINESS">BUSINESS</mat-checkbox></p>
-    <p><mat-checkbox formControlName="COMPUTER_SCIENCE">COMPUTER SCIENCE</mat-checkbox></p>
-    <p><mat-checkbox formControlName="PYSCHOLOGY">PYSCHOLOGY</mat-checkbox></p>
-    <p><mat-checkbox formControlName="SOFTWARE_ENGINEERING">SOFTWARE ENGINEERING</mat-checkbox></p>
-  </section>
-</div>
-
-
-
-<!-- <div>
-  <section class="example-section" [formGroup]="toppings"> 
-    <p><mat-checkbox formControlName="IT">IT</mat-checkbox></p>
-    <p><mat-checkbox formControlName="MARKETING">MARKETING</mat-checkbox></p>
-    <p><mat-checkbox formControlName="FINANCE">FINANCE</mat-checkbox></p>
-    <p><mat-checkbox formControlName="MANAGMENT">MANAGMENT</mat-checkbox></p>
-    <p><mat-checkbox formControlName="BUSINESS">BUSINESS</mat-checkbox></p>
-    <p><mat-checkbox formControlName="COMPUTER_SCIENCE">COMPUTER SCIENCE</mat-checkbox></p>
-    <p><mat-checkbox formControlName="PYSCHOLOGY">PYSCHOLOGY</mat-checkbox></p>
-    <p><mat-checkbox formControlName="SOFTWARE_ENGINEERING">SOFTWARE ENGINEERING</mat-checkbox></p>
-  </section>
-</div> -->
-
-
-
-
-
-
-
-
-<div class="card-container">
-  <div class="card" *ngFor="let job of filteredJobs">
-    <div class="title">
-      <h1>{{ job.title }}</h1>
+<div class="empHome">
+  <div class="main">
+    <div class="jobs">
+      <form>
+        <mat-form-field>
+          <mat-label>Job Type</mat-label>
+          <mat-select [(ngModel)]="typeSelectedValue" name="job">
+            <mat-option class="inp" *ngFor="let food of type" [value]="food.jobType">{{ food.jobType }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p></p>
+        <mat-form-field>
+          <mat-label>Category</mat-label>
+          <mat-select [(ngModel)]="categorySelectedValue" name="category">
+            <mat-option class="inp" *ngFor="let food of category" [value]="food.jobCategory">{{ food.jobCategory
+              }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p></p>
+      </form>
+      <form>
+        <mat-form-field>
+          <mat-label>Location</mat-label>
+          <mat-select [(ngModel)]="locationSelectedValue" name="location" class="inp">
+            <mat-option class="inp" *ngFor="let food of location" [value]="food.jobLocation">{{ food.jobLocation
+              }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p></p>
+        <mat-form-field>
+          <mat-label>Work</mat-label>
+          <mat-select [(ngModel)]="workTypeSelectedValue" name="work">
+            <mat-option class="inp" *ngFor="let food of workype" [value]="food.jobWorkType">{{ food.jobWorkType
+              }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p></p>
+      </form>
     </div>
-    <div class="desc">
-      <p>{{ job.description }}</p>
+    <div class="search">
+      <button mat-raised-button color="primary" (click)="findJobByOptons()">
+        Find
+      </button>
+      <button mat-raised-button class="custom-green-button" (click)="clearFilters()">
+        Clear
+      </button>
+      <hr />
+      <span class="p-input-icon-right">
+        <i class="pi pi-search"></i>
+        <input type="text" pInputText [(ngModel)]="value" (ngModelChange)="searchJobs()" class="custom-width"
+          placeholder="Search for a Job" />
+      </span>
     </div>
-    <div class="seeMore">
-      <button class="seeMoreBtn" mat-button (click)="details(job)">See More</button>
+    <section class="example-section" [formGroup]="toppings">
+      <p><mat-checkbox formControlName="IT">IT</mat-checkbox></p>
+      <p><mat-checkbox formControlName="MARKETING">MARKETING</mat-checkbox></p>
+      <p><mat-checkbox formControlName="FINANCE">FINANCE</mat-checkbox></p>
+      <p><mat-checkbox formControlName="MANAGMENT">MANAGMENT</mat-checkbox></p>
+      <p><mat-checkbox formControlName="BUSINESS">BUSINESS</mat-checkbox></p>
+      <p>
+        <mat-checkbox formControlName="COMPUTER_SCIENCE">COMPUTER SCIENCE</mat-checkbox>
+      </p>
+      <p><mat-checkbox formControlName="PYSCHOLOGY">PYSCHOLOGY</mat-checkbox></p>
+      <p>
+        <mat-checkbox formControlName="SOFTWARE_ENGINEERING">SOFTWARE ENGINEERING</mat-checkbox>
+      </p>
+    </section>
+  </div>
+  <div class="card-container">
+    <div class="card" *ngFor="let job of filteredJobs">
+      <div class="title">
+        <h1>{{ job.title }}</h1>
+      </div>
+      <div class="desc">
+        <p>{{ job.description }}</p>
+      </div>
+      <div class="seeMore">
+        <button class="seeMoreBtn" mat-button (click)="details(job)">
+          See More
+        </button>
+      </div>
     </div>
   </div>
-</div>
-
+</div> 

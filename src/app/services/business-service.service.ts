@@ -26,5 +26,7 @@ export class BusinessServiceService {
     return this.http.get<Business[]>(`${this.apiUrl}/pendingBusinesses`);
   }
 
+  
+
 
 }

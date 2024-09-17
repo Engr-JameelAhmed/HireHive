@@ -9,18 +9,19 @@ import { BusinessServiceService } from 'src/app/services/business-service.servic
   templateUrl: './businesses.component.html',
   styleUrls: ['./businesses.component.css']
 })
-export class BusinessesComponent implements OnInit{
+export class BusinessesComponent implements OnInit {
 
-  businesses: Business[] = []; // Use the Jobs type here
-    
+  businesses: Business[] = [];
   visible: boolean = false;
+
   constructor(
-    private fb : FormBuilder,
+    private fb: FormBuilder,
     private router: Router,
     private businessService: BusinessServiceService
-  ){}
+  ) { }
+
   showDialog() {
-      this.visible = true;
+    this.visible = true;
   }
 
   ngOnInit(): void {
@@ -35,7 +36,6 @@ export class BusinessesComponent implements OnInit{
     );
   }
 
-
   CreateBusinessForm = this.fb.group({
     businessName: ['', Validators.required],
     locationName: ['', Validators.required],
@@ -44,29 +44,46 @@ export class BusinessesComponent implements OnInit{
     businessSite: ['', Validators.required],
     countryName: ['', Validators.required],
   });
-  get
-   businessName(){
+
+  get businessName() {
     return this.CreateBusinessForm.controls['businessName'];
   }
-  get locationName(){
+  get locationName() {
     return this.CreateBusinessForm.controls['locationName'];
   }
-  get businesslevel(){
+  get businesslevel() {
     return this.CreateBusinessForm.controls['businesslevel'];
   }
-  get cityName(){
+  get cityName() {
     return this.CreateBusinessForm.controls['cityName'];
   }
-  get businessSite(){
+  get businessSite() {
     return this.CreateBusinessForm.controls['businessSite'];
   }
-  get countryName(){
+  get countryName() {
     return this.CreateBusinessForm.controls['countryName'];
   }
-  CreateBusiness(){
-    console.log(this.CreateBusinessForm.value);
 
+  CreateBusiness() {
+    console.log(this.CreateBusinessForm.value);
   }
 
+  // Method to trigger the file input click
+  triggerFileInput(businessId: number) {
+    const fileInput = document.getElementById(`fileInput_${businessId}`) as HTMLInputElement;
+    if (fileInput) {
+      fileInput.click();
+    }
+  }
 
+  // Method to handle file selection
+  onFileSelected(event: Event, businessId: number) {
+    const input = event.target as HTMLInputElement;
+    const file = input?.files?.[0];
+    
+    if (file) {
+      console.log(`File selected for business ID ${businessId}:`, file);
+      // Here you can handle file upload logic, e.g., call a service to upload the file.
+    }
+  }
 }

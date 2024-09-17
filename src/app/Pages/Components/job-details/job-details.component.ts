@@ -8,7 +8,7 @@ import { MessageService } from 'primeng/api';
 import { FileUpload } from 'primeng/fileupload';
 import { CvListingService } from 'src/app/services/cv-listing.service';
 import { HttpEvent, HttpEventType, HttpResponse } from '@angular/common/http';
-
+  
 @Component({
   selector: 'app-job-details',
   templateUrl: './job-details.component.html',
@@ -41,11 +41,8 @@ export class JobDetailsComponent implements OnInit{
       this.jobId = params['jobId'] || null;
     });
   }
-
   CreateUpdateCV(){
     this.router.navigate(['/employeeProfile'], { queryParams: { jobId: this.data.id } });
-
-    
   }
   CreateCV(){
     // this.ApplyForJob()
