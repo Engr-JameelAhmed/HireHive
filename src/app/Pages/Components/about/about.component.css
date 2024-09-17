@@ -1,8 +1,27 @@
+.ab {
+  position: relative;
+  overflow: hidden; /* Ensure that the pseudo-element stays within the bounds */
+}
 
-h2{
+.ab::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../../../assets/BgImages/LandingPage.jpeg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5; /* Adjust opacity here */
+  z-index: -1; /* Ensure the pseudo-element is behind the content */
+}
+
+h2 {
   text-align: center;
   margin-top: 5px;
 }
+
 .container {
   width: 60%; /* Adjust as needed */
 }
@@ -36,15 +55,15 @@ h2{
   margin: 0; /* Remove default margins */
 }
 
-
-.testimonials{
+.testimonials {
   /* background-color: bisque; */
   padding: 40px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
-.first{
+
+.first {
   display: flex;
   width: 600px;
   border-radius: 20px;
@@ -54,14 +73,15 @@ h2{
   align-items: center;
   gap: 2rem;
 }
-.first p{
+
+.first p {
   font-weight: 600;
 }
-.icon{
+
+.icon {
   width: 70px;
   padding: 15px;
   border-radius: 20px;
   /* border: 1px solid black; */
   background-color: rgb(186, 197, 207);
-
 }

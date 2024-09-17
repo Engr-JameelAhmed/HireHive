@@ -83,7 +83,7 @@
           <br>
         </div>
         <div class="field">
-          <input type="text" pInputText formControlName="role" class="w-full" name="role" [attr.disabled]="true" />
+          <input type="text" pInputText formControlName="role" class="w-full" name="role" [attr.disabled]="isRoleDisabled ? true : null"/>
           <small
             *ngIf="SignUpForm.controls['role'].invalid && (SignUpForm.controls['role'].dirty || SignUpForm.controls['role'].touched)"
             class="block p-error">

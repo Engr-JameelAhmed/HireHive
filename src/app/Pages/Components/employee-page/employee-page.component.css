@@ -1,7 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+
 .jobs{
   display: flex;
   gap: 85px;
-  /* margin: 40px; */
   margin-top: 140px;
   margin-left: 80px;
 }
@@ -11,6 +14,8 @@
 }
 .main{
   display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 30px;
 }
 .search{
   margin-top: 180px;
@@ -18,47 +23,77 @@
 
 }
 .custom-width {
-  width: 500px; /* Adjust the width as needed */
+  /* width: 200px;  */
 }
 
 .card-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* Center cards horizontally */
-  gap: 20px; /* Adjust space between cards */
-  max-width: calc(3 * 300px + 2 * 20px); /* Adjust container width to fit exactly 3 cards and gaps */
-  margin: 0 auto; /* Center the container horizontally on the page */
-  margin-right: 380px;
+  justify-content: center; 
+  gap: 20px; 
 }
 
 .card {
-  width: 300px; /* Adjust the width of the card as needed */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: add some shadow for better visuals */
-  border-radius: 8px; /* Optional: rounded corners */
-  padding: 16px; /* Optional: padding inside the card */
-  background-color: #f3e9e9; /* Optional: card background color */
-  text-align: center; /* Center text inside the card */
-  /* Optional: adjust height if necessary */
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  padding: 16px; 
+  background-color: #f3e9e9; 
+  text-align: center;
   margin-bottom: 30px;
 }
-@media (max-width: 768px) {
-  .card-container {
-    max-width: 100%; /* Ensure the container fits the screen on smaller devices */
+@media (max-width: 1050px) {
+  
+  .card{
+    width: 250px;
+    height: 200px;
   }
-
-  .card {
-    width: 100%; /* Make cards full width on smaller screens */
+  .jobs{
+    display: flex;
+    gap: 55px;
+    /* margin-top: 140px;
+    margin-left: 80px; */
   }
 }
 
+@media (max-width: 800px) {
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .card {
+    width: 400px;
+    height: 200px;
+  }
+}
+@media (max-width: 650px) {
+  .card-container {
+    
+  }
+  .card {
+    width: 300px;
+    height: 200px;
+  }
+}
+@media (max-width: 330px) {
+  .card-container {
+    
+  }
+  .card {
+    width: 250px;
+    flex: 1 1 100%;
+  }
+}
+  
 .example-section {
 
   border: 1px solid black;
   display: inline-block;
   border-radius: 8px;
-  margin-top: 90px;
+  margin-top: 2px;
   width: 200px;
-  margin-left: 90px;
+  margin-left: 20px;
 }
 
 .seeMoreBtn{
@@ -73,4 +108,9 @@
   background-color: green !important;
   color: white !important;
   margin-left: 5px;
+}
+
+
+::ng-deep .mat-mdc-form-field .mat-mdc-text-field-wrapper {
+  border-radius: 20px;
 }

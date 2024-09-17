@@ -15,5 +15,6 @@ export class ApplicationService {
   createNewApplication(application: Application){
     return this.http.post<Application>(`${this.baseUrl}${this.endpoint}`,application);
   }
+  
 
 }

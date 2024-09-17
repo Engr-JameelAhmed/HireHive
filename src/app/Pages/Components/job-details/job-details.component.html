@@ -26,7 +26,17 @@
       </div>
     </div>
   </mat-card-content>
-  <button mat-raised-button color="primary" [mat-dialog-close]="true" cdkFocusInitial (click)="CreateUpdateCV()">Don't Have CV</button>
+  <!-- <button mat-raised-button color="primary" [mat-dialog-close]="true" cdkFocusInitial (click)="CreateUpdateCV()">Don't Have CV</button> -->
+  <div class="updateCV">
+    <p-fileUpload #fileUploader mode="basic" chooseLabel="Choose File" name="file" accept=".pdf"
+      [maxFileSize]="1000000" (onSelect)="onFileSelect($event)" [auto]="false" >
+    </p-fileUpload>
+    <div class="card flex justify-content-center">
+      <p-button label="Create CV" (click)="CreateCV()" [mat-dialog-close]="true" ></p-button>
+    </div>
+  </div>
+  
+  
   <mat-card-actions align="end">
     <button mat-button mat-dialog-close>Cancel</button>
     <button mat-raised-button color="primary" [mat-dialog-close]="true" cdkFocusInitial (click)="ApplyForJob()">Apply</button>

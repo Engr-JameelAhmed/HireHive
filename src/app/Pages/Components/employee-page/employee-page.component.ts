@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { JobDetailsComponent } from '../job-details/job-details.component';
 import { JobService } from 'src/app/services/jobs-service.service';
@@ -23,7 +23,9 @@ interface workType {
   selector: 'app-employee-page',
   templateUrl: './employee-page.component.html',
   styleUrls: ['./employee-page.component.css'],
+  // encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  
 })
 export class EmployeePageComponent implements OnInit {
   

@@ -14,6 +14,7 @@ import { passwordMatchValidator } from 'src/app/shared/password-match.directive'
 export class SignUpComponent implements OnInit {
   selectedRole: string;
   selectedFile: File | null = null; // For storing the selected file
+  isRoleDisabled = false; // Track whether the role field is disabled
 
   constructor(
     private fb: FormBuilder,
@@ -78,7 +79,7 @@ export class SignUpComponent implements OnInit {
       case 'Investor':
         roleValue = 'ROLE_INVESTOR';
         break;
-      case 'BusinessOwner':
+      case 'Owner':
         roleValue = 'ROLE_BUSINESSOWNER';
         break;
       default:
@@ -86,6 +87,8 @@ export class SignUpComponent implements OnInit {
     }
     // Set the role field value and disable it
     this.SignUpForm.get('role')?.setValue(roleValue);
+    this.SignUpForm.get('role')?.disable(); // Disable the role field
+    this.isRoleDisabled = true; // Update flag to reflect field status in the template
   }
 
   submitDetails() {
@@ -156,6 +159,4 @@ export class SignUpComponent implements OnInit {
       this.selectedFile = input.files[0];
     }
   }
-
- 
 }

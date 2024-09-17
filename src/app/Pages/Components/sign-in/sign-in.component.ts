@@ -89,7 +89,7 @@ export class SignInComponent implements OnInit {
         } else if (roles[0] === 'ROLE_INVESTOR') {
           this.router.navigateByUrl('investments');
         } else if (roles[0] === 'ROLE_BUSINESSOWNER') {
-          this.router.navigateByUrl('business-owner-Home');
+          this.router.navigateByUrl('create-business');
         } else {
           console.log('User Not Found');
         }

@@ -3,11 +3,9 @@
       <mat-card class="custom-card">
         <mat-card-header>
           <mat-card-title>{{ job.title }} <span>  : </span> {{ job.companyName }}</mat-card-title>
-        </mat-card-header>
+        </mat-card-header> 
         <mat-card-content>
           <h4><span style="font-weight: 700;">Posted On: </span>{{ job.postedDate | date:'shortDate' }}</h4> 
-          <br>
-          <br>
           <p><span style="font-weight: 700;">Location : </span> {{ job.location }}</p>
           <p><span style="font-weight: 700;">Salary :</span> {{ job.salary }}Pkr</p>
           <p><span style="font-weight: 700;">Type :</span> {{ job.type }}</p>

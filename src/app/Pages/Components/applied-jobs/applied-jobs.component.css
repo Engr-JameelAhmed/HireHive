@@ -1,26 +1,44 @@
 .page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 90px;
-    max-width: 1200px;
-    margin: 120px auto;
-  }
-  
-  .card {
-    width: 700px;
-  }
-  
-  .custom-card {
-    background-color: lightblue !important;
-    padding: 16px;
-    border-radius: 8px;
-  }
-  .status{
-    background-color: #f5bc51;
-    color: white;
-    padding: 10px;
-  }
-  
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 90px;
+  max-width: 1200px;
+  margin: 80px auto;
+}
+
+.card {
+  width: 1100px; /* Increased width */
+  max-height: 350px; /* Limit the maximum height */
+  overflow: hidden; /* Hide any overflowing content */
+}
+
+.custom-card {
+  background-color: #f8f9fb !important; /* lightblue with 80% opacity */
+  padding: 18px; /* Reduced padding to decrease height */
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensure the card takes up the full height of its container */
+}
+
+mat-card-content {
+  padding: 24px; /* Reduced padding within the card content */
+  overflow: hidden; /* Ensure content doesn’t overflow */
+  flex: 1; /* Allow content to expand within the available space */
+}
+
+h4, p {
+  margin-bottom: 4px; /* Reduced margin between elements */
+}
+
+hr {
+  margin: 8px 0; /* Reduced margin around the horizontal rule */
+}
+
+.status {
+  background-color: #f5bc51;
+  color: white;
+  padding: 6px; /* Adjust padding if needed */
+}
