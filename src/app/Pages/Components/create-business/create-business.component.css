@@ -2,7 +2,9 @@
   position: relative;
   background-color: transparent; 
   overflow: hidden; 
+  min-height: 100vh; /* Ensures it covers the full viewport height */
 }
+
 .createBsn::before {
   content: "";
   position: absolute;
@@ -13,6 +15,7 @@
   background-image: url('../../../../assets/BgImages/Businessowner.jpeg');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed; /* Make the background fixed */
   opacity: 0.9;
   z-index: -1; 
 }
@@ -21,26 +24,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60vw;
+  height: 100vh; /* Ensures the container takes the full height */
 }
+
 .form-container {
   width: 460px;
 }
+
 .p-card {
   border-radius: 12px;
   padding: 0;
 }
+
 .field {
   margin-bottom: 1rem;
 }
+
 .dropdown select {
   width: 100%;
 }
+
 .field label {
   display: block;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
+
 input[type="text"],
 input[type="number"],
 input[type="date"],
@@ -51,10 +60,11 @@ textarea {
   border-radius: 4px;
   box-sizing: border-box;
 }
-input[type="text"],
-input[type="number"],
-input[type="date"],
-textarea {
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+textarea:focus {
   border-color: #007bff;
   outline: none;
 }
@@ -63,16 +73,20 @@ small.p-error {
   color: #dc3545;
   font-size: 0.875rem;
 }
+
 p-button {
   margin-top: 1rem;
 }
+
 .mt-2 {
   margin-top: 1rem;
 }
+
 a {
   color: #007bff;
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: underline;
 }

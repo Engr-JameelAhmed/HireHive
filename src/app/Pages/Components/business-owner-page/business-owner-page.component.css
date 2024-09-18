@@ -1,9 +1,11 @@
-.bsnOwnerHome{
+.bsnOwnerHome {
   position: relative;
   background-color: transparent; 
   overflow: hidden; 
+  min-height: 100vh; /* Ensures it covers the full viewport height */
 }
-.bsnOwnerHome::before{
+
+.bsnOwnerHome::before {
   content: "";
   position: absolute;
   top: 0;
@@ -13,12 +15,12 @@
   background-image: url('../../../../assets/BgImages/Investor.jpeg');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed; /* Make the background fixed */
   opacity: 0.9;
   z-index: -1; 
 }
 
-
-.title{
+.title {
   text-align: center;
   margin-top: 55px;
   font-size: 40px;
@@ -37,18 +39,14 @@
 }
 
 .card {
-  /* border-radius: 10px solid black; */
-  background-color: transparent;
+  background-color: transparent; /* Ensuring the card has no background */
   border: none;
   margin-bottom: 150px;
-
 }
 
 .custom-card {
-  background-color: rgb(225, 232, 235) !important;
-  padding: 36px;
+  background-color: rgb(225, 232, 235) !important; /* Set your desired background color */
+  padding: 36px; /* Padding for a better look */
   margin: 10px;
-  border-radius: 8px solid black;
+  border-radius: 8px; /* Corrected the border-radius property */
 }
-
-

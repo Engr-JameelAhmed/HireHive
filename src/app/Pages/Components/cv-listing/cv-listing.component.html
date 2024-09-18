@@ -1,32 +1,35 @@
-<div class="page">
-  <h1 class="title">Applications</h1>
-  <div class="flex justify-content-center m-5">
-    <mat-card class="custom-card m-3" *ngFor="let event of cvs">
-      <mat-card-header>
-        <mat-card-title>{{ event.title }}</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <p class="m-2">{{ event.description }}</p>
-      </mat-card-content>
-      <div class="card1 flex justify-content-center">
-        <p-button class="btn" (click)="showDialog()" icon="pi pi-external-link" label="See Details"></p-button>
-        <p-dialog header="Application" [modal]="true" [(visible)]="visible" [style]="{ width: '50vw' }"
-          [maximizable]="true">
-          <h2>Job Title: {{ event.title }}</h2>
-          <h2>Posted On: {{ event.postedDate | date:'shortDate' }}</h2>
-          <h2>Type: {{ event.type }}</h2>
-          <h2>Category: {{ event.category }}</h2>
-          <p>{{ event.description }}</p>
-          <section class="btns">
-            <div class="example-button-row">
-              <button mat-raised-button color="primary" (click)="downloadCV(event.employeeId)">Download CV</button> 
-            </div>
-            <div class="example-button-row">
-              <button mat-raised-button [ngStyle]="{'background-color': 'red', 'color': 'white'}" (click)="rejectApplication(event.applicationId)">Reject</button>
-            </div>
-          </section>
-        </p-dialog>
-      </div>
-    </mat-card>
+<div class="cvListingPage">
+  <div class="page">
+    <h1 class="title">Applications</h1>
+    <div class="flex justify-content-center m-5">
+      <mat-card class="custom-card m-3" *ngFor="let event of cvs">
+        <mat-card-header> 
+          <mat-card-title>{{ event.title }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p class="m-2">{{ event.description }}</p>
+        </mat-card-content>
+        <div class="card1 flex justify-content-center">
+          <p-button class="btn" (click)="showDialog()" icon="pi pi-external-link" label="See Details"></p-button>
+          <p-dialog header="Application" [modal]="true" [(visible)]="visible" [style]="{ width: '50vw' }"
+            [maximizable]="true">
+            <h2>Job Title: {{ event.title }}</h2>
+            <h2>Posted On: {{ event.postedDate | date:'shortDate' }}</h2>
+            <h2>Type: {{ event.type }}</h2>
+            <h2>Category: {{ event.category }}</h2>
+            <p>{{ event.description }}</p>
+            <section class="btns">
+              <div class="example-button-row">
+                <button mat-raised-button color="primary" (click)="downloadCV(event.employeeId)">Download CV</button>
+              </div>
+              <div class="example-button-row">
+                <button mat-raised-button [ngStyle]="{'background-color': 'red', 'color': 'white'}"
+                  (click)="rejectApplication(event.applicationId)">Reject</button>
+              </div>
+            </section>
+          </p-dialog>
+        </div>
+      </mat-card>
+    </div>
   </div>
 </div>

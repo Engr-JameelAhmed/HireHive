@@ -1,10 +1,11 @@
-.investmentPage{
+.investmentPage {
   position: relative;
   background-color: transparent; 
   overflow: hidden; 
+  min-height: 100vh; /* Ensures it covers the full viewport height */
 }
 
-.investmentPage::before{
+.investmentPage::before {
   content: "";
   position: absolute;
   top: 0;
@@ -14,17 +15,18 @@
   background-image: url('../../../../assets/BgImages/Investor.jpeg');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed; /* Make the background fixed */
   opacity: 0.9;
   z-index: -1; 
 }
 
-
-.title{
+.title {
   font-size: 40px;
   font-weight: 500;
-  font-family:   'Lucida Sans', Arial, sans-serif;
+  font-family: 'Lucida Sans', Arial, sans-serif;
   color: #ffa601;
 }
+
 .page {
   display: flex;
   flex-direction: column;
@@ -44,16 +46,17 @@
   padding: 16px; /* Add some padding for a better look */
   border-radius: 8px; /* Optional: Add border-radius for rounded corners */
 }
-.card1{
+
+.card1 {
+  display: flex; /* Ensure contents are flexed as needed */
 }
 
-.btns{
+.btns {
   display: flex;
   justify-content: space-evenly;
 }
 
-
-.insideDetails{
+.insideDetails {
   font-size: larger;
   font-weight: 600;
   margin-right: 15px;

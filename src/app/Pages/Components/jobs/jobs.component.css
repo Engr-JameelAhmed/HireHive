@@ -1,9 +1,11 @@
-.jobsPage{
+.jobsPage {
   position: relative;
   background-color: transparent; 
   overflow: hidden; 
+  min-height: 100vh; /* Ensures it covers the full viewport height */
 }
-.jobsPage::before{
+
+.jobsPage::before {
   content: "";
   position: absolute;
   top: 0;
@@ -13,10 +15,10 @@
   background-image: url('../../../../assets/BgImages/Employer.jpeg');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed; /* Make the background fixed */
   opacity: 0.9;
   z-index: -1; 
 }
-
 
 .page {
   display: flex;
@@ -37,5 +39,3 @@
   padding: 16px;
   border-radius: 8px;
 }
-
-

@@ -50,12 +50,10 @@ const routes: Routes = [
     { path: 'cv-listing', component:  CvListingComponent},
     { path: 'job-posting', component:  JobPostingComponent},
    ]},
-
    { path: 'investorHome', component:  InvestorPageComponent},
    { path: 'employeeProfile', component:  EmployeeProfileComponent},
    { path: 'business-owner-Home', component:  BusinessOwnerPageComponent},
    { path: '**', component:  PageNotFoundComponent},
-
 
 ];
 

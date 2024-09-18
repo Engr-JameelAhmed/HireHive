@@ -1,11 +1,8 @@
 <div class="investmentProposal">
-<div class="page">
+  <div class="page">
     <h1 class="title">Proposals</h1>
     <div class="flex justify-content-center m-5">
-      <mat-card
-        class="custom-card m-3"
-        *ngFor="let event of proposals"
-      >
+      <mat-card class="custom-card m-3" *ngFor="let event of proposals">
         <mat-card-header>
           <mat-card-title>{{ event.name }}</mat-card-title>
         </mat-card-header>
@@ -39,9 +36,9 @@
       <h2 *ngIf="selectedEvent">Business Name: {{ selectedEvent.name }}</h2>
       <h2 *ngIf="selectedEvent">Created On: {{ selectedEvent.createdOn | date:'shortDate' }}</h2>
       <h2 *ngIf="selectedEvent">Business Founder Name: {{ selectedEvent.ownerName }}</h2>
-      <h2 *ngIf="selectedEvent">Investment Required for : {{ selectedEvent.sharePercent }}% is : {{ selectedEvent.investmentAmount }} </h2>
-      <h2 *ngIf="selectedEvent">Business Industry : {{ selectedEvent.industry }}</h2>
-      <h2>Description : </h2>
+      <h2 *ngIf="selectedEvent">Investment Required for: {{ selectedEvent.sharePercent }}% is: {{ selectedEvent.investmentAmount }}</h2>
+      <h2 *ngIf="selectedEvent">Business Industry: {{ selectedEvent.industry }}</h2>
+      <h2>Description:</h2>
       <p *ngIf="selectedEvent">{{ selectedEvent.description }}</p>
     </p-dialog>
   </div>

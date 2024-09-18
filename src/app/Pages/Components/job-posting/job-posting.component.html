@@ -1,85 +1,89 @@
-<div id="login-container">
-  <div class="form-container">
-    <form [formGroup]="JobPostingForm" (ngSubmit)="onCreateJob()">
-      <p-card header="Post a Job" class="p-card">
-        <div class="field">
-          <input type="text" pInputText formControlName="title" name="title" placeholder="Enter title" />
-          <small *ngIf="title.invalid && (title.dirty || title.touched)" class="block p-error">
-            <div *ngIf="title.errors?.['required']">
-              Title is required
-            </div>
-          </small>
-        </div>
+<div class="jobPostingPage">
+  <div id="login-container">
+    <div class="form-container">
+      <form [formGroup]="JobPostingForm" (ngSubmit)="onCreateJob()">
+        <p-card header="Post a Job" class="p-card">
+          <div class="field">
+            <input type="text" pInputText formControlName="title" name="title" placeholder="Enter title" />
+            <small *ngIf="title.invalid && (title.dirty || title.touched)" class="block p-error">
+              <div *ngIf="title.errors?.['required']">
+                Title is required
+              </div>
+            </small>
+          </div>
 
-        <div class="field">
-          <input type="text" pInputText formControlName="companyName" name="companyName" placeholder="Enter companyName" />
-          <small *ngIf="companyName.invalid && (companyName.dirty || companyName.touched)" class="block p-error">
-            <div *ngIf="companyName.errors?.['required']">
-              companyName is required
-            </div>
-          </small>
-        </div>
+          <div class="field">
+            <input type="text" pInputText formControlName="companyName" name="companyName"
+              placeholder="Enter companyName" />
+            <small *ngIf="companyName.invalid && (companyName.dirty || companyName.touched)" class="block p-error">
+              <div *ngIf="companyName.errors?.['required']">
+                companyName is required
+              </div>
+            </small>
+          </div>
 
-        <div class="field">
-          <input type="number" pInputText formControlName="salary" name="salary" placeholder="Enter salary" />
-          <small *ngIf="salary.invalid && (salary.dirty || salary.touched)" class="block p-error">
-            <div *ngIf="salary.errors?.['required']">salary is required</div>
-          </small>
-        </div>
+          <div class="field">
+            <input type="number" pInputText formControlName="salary" name="salary" placeholder="Enter salary" />
+            <small *ngIf="salary.invalid && (salary.dirty || salary.touched)" class="block p-error">
+              <div *ngIf="salary.errors?.['required']">salary is required</div>
+            </small>
+          </div>
 
-        <!-- Location Dropdown -->
-        <div class="field dropdown">
-          <select formControlName="location" pInputText>
-            <option value="" disabled selected>Select location</option>
-            <option *ngFor="let loc of locations" [value]="loc">{{ loc }}</option>
-          </select>
-          <small *ngIf="location.invalid && (location.dirty || location.touched)" class="block p-error">
-            <div *ngIf="location.errors?.['required']">Location is required</div>
-          </small>
-        </div>
+          <!-- Location Dropdown -->
+          <div class="field dropdown">
+            <select formControlName="location" pInputText>
+              <option value="" disabled selected>Select location</option>
+              <option *ngFor="let loc of locations" [value]="loc">{{ loc }}</option>
+            </select>
+            <small *ngIf="location.invalid && (location.dirty || location.touched)" class="block p-error">
+              <div *ngIf="location.errors?.['required']">Location is required</div>
+            </small>
+          </div>
 
-        <!-- Category Dropdown -->
-        <div class="field dropdown">
-          <select formControlName="category" pInputText>
-            <option value="" disabled selected>Select category</option>
-            <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
-          </select>
-          <small *ngIf="category.invalid && (category.dirty || category.touched)" class="block p-error">
-            <div *ngIf="category.errors?.['required']">Category is required</div>
-          </small>
-        </div>
+          <!-- Category Dropdown -->
+          <div class="field dropdown">
+            <select formControlName="category" pInputText>
+              <option value="" disabled selected>Select category</option>
+              <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+            </select>
+            <small *ngIf="category.invalid && (category.dirty || category.touched)" class="block p-error">
+              <div *ngIf="category.errors?.['required']">Category is required</div>
+            </small>
+          </div>
 
-        <!-- Type Dropdown -->
-        <div class="field dropdown">
-          <select formControlName="type" pInputText>
-            <option value="" disabled selected>Select type</option>
-            <option *ngFor="let typ of types" [value]="typ">{{ typ }}</option>
-          </select>
-          <small *ngIf="type.invalid && (type.dirty || type.touched)" class="block p-error">
-            <div *ngIf="type.errors?.['required']">Type is required</div>
-          </small>
-        </div>
+          <!-- Type Dropdown -->
+          <div class="field dropdown">
+            <select formControlName="type" pInputText>
+              <option value="" disabled selected>Select type</option>
+              <option *ngFor="let typ of types" [value]="typ">{{ typ }}</option>
+            </select>
+            <small *ngIf="type.invalid && (type.dirty || type.touched)" class="block p-error">
+              <div *ngIf="type.errors?.['required']">Type is required</div>
+            </small>
+          </div>
 
-        <!-- WorkType Dropdown -->
-        <div class="field dropdown">
-          <select formControlName="workType" pInputText>
-            <option value="" disabled selected>Select work type</option>
-            <option *ngFor="let work of workTypes" [value]="work">{{ work }}</option>
-          </select>
-          <small *ngIf="workType.invalid && (workType.dirty || workType.touched)" class="block p-error">
-            <div *ngIf="workType.errors?.['required']">Work type is required</div>
-          </small>
-        </div>
+          <!-- WorkType Dropdown -->
+          <div class="field dropdown">
+            <select formControlName="workType" pInputText>
+              <option value="" disabled selected>Select work type</option>
+              <option *ngFor="let work of workTypes" [value]="work">{{ work }}</option>
+            </select>
+            <small *ngIf="workType.invalid && (workType.dirty || workType.touched)" class="block p-error">
+              <div *ngIf="workType.errors?.['required']">Work type is required</div>
+            </small>
+          </div>
 
-        <div class="field">
-          <textarea pInputTextarea formControlName="description" name="description" placeholder="Enter description"></textarea>
-          <small *ngIf="description.invalid && (description.dirty || description.touched)" class="block p-error">
-            <div *ngIf="description.errors?.['required']">Description is required</div>
-          </small>
-        </div>
+          <div class="field">
+            <textarea pInputTextarea formControlName="description" name="description"
+              class="input-field" placeholder="Enter description"></textarea>
+            <small *ngIf="description.invalid && (description.dirty || description.touched)" class="block p-error">
+              <div *ngIf="description.errors?.['required']">Description is required</div>
+            </small>
+          </div>
 
-        <p-button label="Post" styleClass="w-full" [disabled]="JobPostingForm.invalid" type="submit"></p-button>
-      </p-card>
-    </form>
+          <p-button label="Post" styleClass="w-full" [disabled]="JobPostingForm.invalid" type="submit"></p-button>
+        </p-card>
+      </form>
+    </div>
   </div>
 </div>

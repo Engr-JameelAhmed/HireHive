@@ -5,7 +5,8 @@
 .empHome {
   position: relative;
   background-color: transparent; /* Ensure no default background color is applied */
-  overflow: hidden; /* Ensure that the pseudo-element does not overflow */
+  overflow: hidden; /* Prevent the pseudo-element from overflowing */
+  min-height: 100vh; /* Ensures it covers the full viewport height */
 }
 
 .empHome::before {
@@ -18,6 +19,7 @@
   background-image: url('../../../../assets/BgImages/Employee.jpeg');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed; /* Make the background fixed */
   opacity: 0.9;
   z-index: -1; 
 }
@@ -28,80 +30,83 @@
 .example-section,
 .card-container,
 .card {
-  position: relative; /* Make sure these elements are positioned above the pseudo-element */
+  position: relative; /* Ensure these elements are positioned above the pseudo-element */
 }
-.jobs{
+
+.jobs {
   display: flex;
   gap: 85px;
   margin-top: 140px;
   margin-left: 80px;
 }
-.inp{
+
+.inp {
   border-radius: 25px;
   color: red;
 }
-.main{
+
+.main {
   display: flex;
   justify-content: space-evenly;
   margin-bottom: 30px;
 }
-.search{
+
+.search {
   margin-top: 180px;
   margin-left: 60px;
-
 }
+
 .custom-width {
-  /* width: 200px;  */
+  /* Custom input width if needed */
 }
 
-  .card-container {
-    display: flex;
-    flex-wrap: wrap; /* Allows items to wrap to the next line */
-    gap: 20px; /* Space between the cards */
-    justify-content: center; /* Center the cards horizontally */
-  }
+.card-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to the next line */
+  gap: 20px; /* Space between the cards */
+  justify-content: center; /* Center the cards horizontally */
+}
 
+.card {
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  padding: 16px; 
+  background-color: #f3e9e9; 
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 1050px) {
+  .card {
+    width: 250px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 800px) {
+  .card {
+    width: 400px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 650px) {
   .card {
     width: 300px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    padding: 16px; 
-    background-color: #f3e9e9; 
-    text-align: center;
-    margin-bottom: 30px;
+    height: 200px;
   }
+}
 
-  /* Responsive design adjustments */
-  @media (max-width: 1050px) {
-    .card {
-      width: 250px;
-      height: 200px;
-    }
+@media (max-width: 330px) {
+  .card {
+    width: 250px;
+    height: 200px;
   }
+}
 
-  @media (max-width: 800px) {
-    .card {
-      width: 400px;
-      height: 200px;
-    }
-  }
-
-  @media (max-width: 650px) {
-    .card {
-      width: 300px;
-      height: 200px;
-    }
-  }
-
-  @media (max-width: 330px) {
-    .card {
-      width: 250px;
-      height: 200px;
-    }
-  }
-  
 .example-section {
-
   border: 1px solid black;
   display: inline-block;
   border-radius: 8px;
@@ -110,13 +115,12 @@
   margin-left: 20px;
 }
 
-.seeMoreBtn{
+.seeMoreBtn {
   background-color: rgb(230, 223, 196);
   border-radius: 15px;
   padding: 15px;
   font-size: 12px;
 }
-
 
 .custom-green-button {
   background-color: green !important;
@@ -124,7 +128,7 @@
   margin-left: 5px;
 }
 
-
 ::ng-deep .mat-mdc-form-field .mat-mdc-text-field-wrapper {
   border-radius: 20px;
 }
+  
