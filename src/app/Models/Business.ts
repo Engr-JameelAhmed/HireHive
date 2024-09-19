@@ -9,6 +9,7 @@ export class Business{
     investmentAmount: number;
     ownerName: string;
     sharePercent: number;
+    proposal?: string
     constructor(
         industry: string,
         name: string,

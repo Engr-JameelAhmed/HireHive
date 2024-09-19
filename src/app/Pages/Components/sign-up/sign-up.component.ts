@@ -123,7 +123,7 @@ export class SignUpComponent implements OnInit {
       this.SignUpForm.value.email,
       roleValue,
       this.SignUpForm.value.gender
-    );
+    ); 
   
     console.log('user overall data for signUp is : ', newUser);
     
