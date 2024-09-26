@@ -44,8 +44,9 @@
 }
 
 .custom-card {
-  background-color: rgb(225, 232, 235) !important; /* Set your desired background color */
+  background-color: rgba(44, 41, 41, 0.6) !important; /* Set your desired background color */
   padding: 36px; /* Padding for a better look */
   margin: 10px;
+  color: white;
   border-radius: 8px; /* Rounded corners */
 }

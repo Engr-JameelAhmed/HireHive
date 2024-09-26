@@ -10,36 +10,26 @@
           <p class="m-2">{{ event.description }}</p>
         </mat-card-content>
         <div class="card1 flex justify-content-center">
-          <p-button
-            class="btn"
-            (click)="showDialog(event)"
-            icon="pi pi-external-link"
-            label="See Details"
-          ></p-button>
-          <p-button
-            class="btn"
-            (click)="acceptProposal(event)"
-            label="Accept Proposal"
-          ></p-button>
+          <p-button class="btn custom-btn" (click)="showDialog(event)" icon="pi pi-external-link" label="See Details"></p-button>
+          <p-button class="btn" (click)="acceptProposal(event)" label="Accept Proposal"></p-button>
         </div>
       </mat-card>
     </div>
-    
-    <p-dialog
-      header="Application"
-      [modal]="true"
-      [(visible)]="visible"
-      [style]="{ width: '50vw' }"
-      [maximizable]="true"
-      (onHide)="hideDialog()"
-    >
+
+    <p-dialog header="Business Details" [modal]="true" [(visible)]="visible" [style]="{ width: '50vw' }"
+      [maximizable]="true" (onHide)="hideDialog()" class="custom-dialog">
       <h2 *ngIf="selectedEvent">Business Name: {{ selectedEvent.name }}</h2>
       <h2 *ngIf="selectedEvent">Created On: {{ selectedEvent.createdOn | date:'shortDate' }}</h2>
       <h2 *ngIf="selectedEvent">Business Founder Name: {{ selectedEvent.ownerName }}</h2>
-      <h2 *ngIf="selectedEvent">Investment Required for: {{ selectedEvent.sharePercent }}% is: {{ selectedEvent.investmentAmount }}</h2>
+      <h2 *ngIf="selectedEvent">Investment Required for: {{ selectedEvent.sharePercent }}% is: {{
+        selectedEvent.investmentAmount }}</h2>
       <h2 *ngIf="selectedEvent">Business Industry: {{ selectedEvent.industry }}</h2>
       <h2>Description:</h2>
       <p *ngIf="selectedEvent">{{ selectedEvent.description }}</p>
+      <div class="example-button-row">
+        <button mat-raised-button class="custom-download-proposal-btn" (click)="downloadBusinessProposal(selectedEvent.id)">Download
+          Proposal</button>
+      </div>
     </p-dialog>
   </div>
 </div>

@@ -141,6 +141,10 @@ export class EmployeePageComponent implements OnInit {
     const dialogRef = this.dialog.open(JobDetailsComponent, {
       data: job // Pass the job data as a parameter
     });
+    dialogRef.componentInstance.jobApplied.subscribe(() => {
+      // Refresh the job listings when a job is applied for
+      this.getAllNotAppliedJobs();
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);

@@ -1,39 +1,30 @@
 <div class="investmentPage">
   <div class="page">
-    <h1 class="title">My Investments</h1>
+    <!-- <h1 class="title">My Investments</h1> -->
     <div class="flex justify-content-center m-5">
       <mat-card class="custom-card m-3" *ngFor="let event of myInvestments">
         <mat-card-header>
           <mat-card-title>{{ event.name }}</mat-card-title>
-        </mat-card-header>
+        </mat-card-header> 
         <mat-card-content>
           <p class="m-2">{{ event.description }}</p>
         </mat-card-content>
         <div class="card1 flex justify-content-center">
-          <p-button
-            class="btn"
-            (click)="showDialog(event)"
-            icon="pi pi-external-link"
-            label="See Details"
-          ></p-button>
+          <p-button class="btn custom-btn" (click)="showDialog(event)" icon="pi pi-external-link" label="See Details"></p-button>
         </div>
       </mat-card>
     </div>
-    
-    <p-dialog
-      header="Investment"
-      [modal]="true"
-      [(visible)]="visible"
-      [style]="{ width: '50vw' }"
-      [maximizable]="true"
-      (onHide)="hideDialog()"
-    >
-      <h3 *ngIf="selectedEvent"><span class="insideDetails">Name:</span>  {{ selectedEvent.name }}</h3>
+
+    <p-dialog header="Investment" [modal]="true" [(visible)]="visible" [style]="{ width: '50vw' }" [maximizable]="true"
+      (onHide)="hideDialog()" class="custom-dialog">
+      <h3 *ngIf="selectedEvent"><span class="insideDetails">Name:</span> {{ selectedEvent.name }}</h3>
       <h3 *ngIf="selectedEvent"><span class="insideDetails">Industry:</span> {{ selectedEvent.industry }}</h3>
       <h3 *ngIf="selectedEvent"><span class="insideDetails">Founder:</span> {{ selectedEvent.ownerName }}</h3>
-      <h3 *ngIf="selectedEvent"><span class="insideDetails">Created On:</span> {{ selectedEvent.createdOn | date:'shortDate' }}</h3>
+      <h3 *ngIf="selectedEvent"><span class="insideDetails">Created On:</span> {{ selectedEvent.createdOn |
+        date:'shortDate' }}</h3>
       <h3 *ngIf="selectedEvent"><span class="insideDetails">Email:</span> {{ selectedEvent.email }}</h3>
-      <h3 *ngIf="selectedEvent"><span class="insideDetails">Investment :</span> {{ selectedEvent.investmentAmount }} </h3>
+      <h3 *ngIf="selectedEvent"><span class="insideDetails">Investment :</span> {{ selectedEvent.investmentAmount }}
+      </h3>
       <hr>
       <h2>Description : </h2>
       <p *ngIf="selectedEvent">{{ selectedEvent.description }}</p>

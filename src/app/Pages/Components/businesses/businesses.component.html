@@ -1,5 +1,5 @@
 <div class="pendingBsn">
-  <h1 class="title">Pending Businesses</h1>
+  <!-- <h1 class="title">Pending Businesses</h1> -->
   <div class="page">
     <div class="card justify-content-center">
       <mat-card class="custom-card" *ngFor="let business of businesses">
@@ -7,13 +7,17 @@
           <mat-card-title>{{ business.name }}</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <h4>Posted On: {{ business.createdOn | date:'shortDate' }}</h4>
-          <p class="m-2">{{ business.description }}</p>
+          <h4><span style="font-weight: 700; text-decoration: underline; font-size: large;">Posted Date</span> : {{ business.createdOn | date:'shortDate' }}</h4>
+          <p class="m-2"><span style="font-weight: 700; text-decoration: underline; font-size: large;">Industry</span> : {{ business.industry }}</p>
+          <br>
+          <p class="m-2"><span style="font-weight: 700; text-decoration: underline; font-size: large;">Description</span> : {{ business.description }}</p>
+          <br>
+          <p class="m-2"><span style="font-weight: 700; text-decoration: underline; font-size: large;">SharePercent</span> : {{ business.sharePercent }}%</p>
           
           <!-- File upload button and input -->
-          <button mat-raised-button color="primary" (click)="triggerFileInput(business.id)">
+          <!-- <button mat-raised-button color="primary" (click)="triggerFileInput(business.id)">
             Upload File
-          </button>
+          </button> -->
           <input type="file" [id]="'fileInput_' + business.id" (change)="onFileSelected($event, business.id)" style="display: none;" />
         </mat-card-content>
       </mat-card>

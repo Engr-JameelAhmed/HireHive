@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Inject, OnInit, Output, ViewChild } from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -17,6 +17,9 @@ import { HttpEvent, HttpEventType, HttpResponse } from '@angular/common/http';
 export class JobDetailsComponent implements OnInit{  
   jobId: string | null = null;
   selectedFile: File | null = null;
+
+  @Output() jobApplied = new EventEmitter<void>();
+ 
 
   @ViewChild('fileUploader') fileUploader!: FileUpload;
 
@@ -62,6 +65,8 @@ export class JobDetailsComponent implements OnInit{
           summary: 'Applied Successfully',
           detail: 'You Have successfully applied for the job',
         });
+         // Emit event to notify parent component
+         this.jobApplied.emit();
         // setTimeout(() => {
         //   this.router.navigate(['/employeeHome']);
         // },2000)

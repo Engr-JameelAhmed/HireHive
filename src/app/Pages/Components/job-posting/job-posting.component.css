@@ -66,6 +66,7 @@ small.p-error {
 }
 p-button {
   margin-top: 1rem;
+  /* border-radius: 5px; */
 }
 .mt-2 {
   margin-top: 1rem;
@@ -84,5 +85,11 @@ textarea {
   border-radius: 4px; /* Consistent border radius */
   box-sizing: border-box; /* Ensure padding is included in the width */
   resize: vertical; /* Optional: allows vertical resizing only */
+}
+/* p-ripple p-element w-full p-button p-component p-disabled */
+::ng-deep .p-ripple{
+  background-color: black;
+  color: #ffdb00;
+  border-radius: 10px;
 }
 /* ------------------   Taken form from sign-in page and the css ends from here ------------------------------------------------- */

@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 export class BusinessServiceService {
 
   private apiUrl = 'http://localhost:9090/business';  // API endpoint
+  private downloadCVEndpoint = '/download'
   myBusiness: Business;
 
   constructor(private http: HttpClient) { }  
@@ -35,6 +36,12 @@ export class BusinessServiceService {
   }
   getAllPendingBusinesses(): Observable<Business[]> {
     return this.http.get<Business[]>(`${this.apiUrl}/pendingBusinesses`);
+  }
+
+  downloadBusinessProposal(userId: number): Observable<Blob> {
+    return this.http.get(`${this.apiUrl}${this.downloadCVEndpoint}/${userId}`, {
+      responseType: 'blob'  // Specify that the response type is a Blob
+    });
   }
 
   

@@ -43,13 +43,11 @@
 .dropdown select {
   width: 100%;
 }
-
 .field label {
   display: block;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
-
 input[type="text"],
 input[type="number"],
 input[type="date"],
@@ -60,7 +58,6 @@ textarea {
   border-radius: 4px;
   box-sizing: border-box;
 }
-
 input[type="text"]:focus,
 input[type="number"]:focus,
 input[type="date"]:focus,
@@ -68,16 +65,15 @@ textarea:focus {
   border-color: #007bff;
   outline: none;
 }
-
 small.p-error {
   color: #dc3545;
   font-size: 0.875rem;
 }
-
 p-button {
   margin-top: 1rem;
+  /* background-color: black;
+  color: white; */
 }
-
 .mt-2 {
   margin-top: 1rem;
 }
@@ -86,7 +82,11 @@ a {
   color: #007bff;
   text-decoration: none;
 }
-
 a:hover {
   text-decoration: underline;
+}
+::ng-deep .p-ripple{
+  background-color: black;
+  color: #ffdb00;
+  border-radius: 10px;
 }

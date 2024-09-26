@@ -59,4 +59,24 @@ export class InvestmentProposalsComponent implements OnInit{
       });
 
   }
+
+
+  downloadBusinessProposal(userId: number) {
+    this.businessService.downloadBusinessProposal(userId).subscribe(
+      (blob: Blob) => {
+        // Create a URL for the blob
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `CV_${userId}.pdf`;  // You might want to modify the filename
+        a.click();
+        window.URL.revokeObjectURL(url);
+        
+      },
+      error => {
+        console.error('Error downloading CV:', error);
+      }
+    );
+    
+  }
 }

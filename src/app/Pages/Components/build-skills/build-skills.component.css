@@ -1,0 +1,79 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+.mainClass{
+    background-image: url('../../../../assets/BgImages/Businessowner.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* top: 0; */
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-wrap: wrap;
+    /* margin-top: 130px; */
+    
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(44, 41, 41, 0.4); /* Change to an RGBA color for low opacity */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 900px; 
+    height: 220px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    padding: 20px;
+}
+
+/* Optional: You can also set a different background color for hover state */
+.card:hover {
+    transform: scale(1.05);
+    background-color: rgba(44, 41, 41, 0.4); /* Fully opaque on hover */
+}
+
+.img {
+    width: 40%; 
+}
+
+.img img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+}
+
+.title {
+    width: 60%; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    padding: 10px; 
+}
+.title h3{
+    color: white;
+}
+
+h1 {
+    font-size: 18px;
+    margin: 0; 
+}
+
+p {
+    margin: 5px 0 0; 
+    color: #555; 
+}

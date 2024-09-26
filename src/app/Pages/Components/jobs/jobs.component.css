@@ -29,13 +29,16 @@
   max-width: 1200px;
   margin: 120px auto;
 }
-
+/* 
 .card {
-  width: 700px;
-}
+  width: 900px;
+} */
 
 .custom-card {
-  background-color: lightblue !important;
+  background-color: rgba(44, 41, 41, 0.6) !important;
   padding: 16px;
+  color: white;
+  width: 900px;
+  margin-bottom: 20px;
   border-radius: 8px;
 }

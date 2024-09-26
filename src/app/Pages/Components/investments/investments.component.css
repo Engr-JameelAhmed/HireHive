@@ -37,14 +37,17 @@
   margin: 120px auto;
 }
 
-.card {
-  width: 700px;
-}
+/* .card {
+  width: 900px;
+} */
 
 .custom-card {
-  background-color: lightblue !important; /* Set your desired background color */
+  background-color: rgba(44, 41, 41, 0.6) !important; /* Set your desired background color */
   padding: 16px; /* Add some padding for a better look */
   border-radius: 8px; /* Optional: Add border-radius for rounded corners */
+  color: white;
+  width: 900px;
+
 }
 
 .card1 {
@@ -60,4 +63,26 @@
   font-size: larger;
   font-weight: 600;
   margin-right: 15px;
+}
+::ng-deep .p-ripple{
+  background-color: black;
+  color: #ffa601;
+  border: none;
+  border-radius: 10px;
+}
+::ng-deep .custom-dialog .p-dialog {
+  background-color: #c1bb81 !important;
+  border-radius: 15px !important; 
+}
+
+::ng-deep .custom-dialog .p-dialog-header {
+  background-color: #c1bb81 !important; 
+  border-top-left-radius: 15px !important; /* Match the border radius */
+  border-top-right-radius: 15px !important; /* Match the border radius */
+}
+::ng-deep .custom-dialog .p-dialog-content {
+  background-color: #c1bb81 !important;
+  color: black;
+  border-bottom-left-radius: 15px !important; /* Match the border radius */
+  border-bottom-right-radius: 15px !important; /* Match the border radius */
 }

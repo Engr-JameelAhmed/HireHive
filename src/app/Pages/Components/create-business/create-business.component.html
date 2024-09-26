@@ -35,11 +35,12 @@
           </div>
           <br>
           <p-fileUpload #fileUploader mode="basic" chooseLabel="Choose File" name="file" accept=".pdf"
-            [maxFileSize]="1000000" (onSelect)="onFileSelect($event)" [auto]="false" >
+              [maxFileSize]="1000000" (onSelect)="onFileSelect($event)" [auto]="false">
           </p-fileUpload>
-          <br>
 
-          <p-button label="Post" styleClass="w-full" [disabled]="BusinessPostingForm.invalid" type="submit"></p-button>
+          <p-button label="Post" styleClass="w-full" 
+           [disabled]="BusinessPostingForm.invalid || !selectedFile" 
+           type="submit"></p-button>
         </p-card>
       </form>
     </div>

@@ -58,6 +58,8 @@ mat-card-actions {
 
 button[mat-raised-button] {
   margin-left: 8px;
+  background-color: #181717 !important;
+  color: #ffdb00 !important;
 }
 .updateCV{
     display: flex;
@@ -65,3 +67,9 @@ button[mat-raised-button] {
     margin-bottom: 10px;
   /* margin-left: 10px; */
 }
+/* p-ripple p-element p-button p-component p-fileupload-choose */
+::ng-deep .p-ripple{
+  background-color: #181717 !important;
+  color: #ffdb00 !important;
+}
+/* mat-mdc-button-touch-target */

@@ -59,12 +59,13 @@
 .custom-width {
   /* Custom input width if needed */
 }
-
+  
 .card-container {
   display: flex;
-  flex-wrap: wrap; /* Allows items to wrap to the next line */
-  gap: 20px; /* Space between the cards */
-  justify-content: center; /* Center the cards horizontally */
+  flex-wrap: wrap; 
+  gap: 20px; 
+  justify-content: center;
+  
 }
 
 .card {
@@ -72,9 +73,9 @@
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   border-radius: 8px;
   padding: 16px; 
-  background-color: #f3e9e9; 
   text-align: center;
   margin-bottom: 30px;
+  background-color: rgba(26, 23, 23, 0.6); 
 }
 
 /* Responsive design adjustments */
@@ -107,6 +108,7 @@
 }
 
 .example-section {
+  top: 20px;
   border: 1px solid black;
   display: inline-block;
   border-radius: 8px;
@@ -123,8 +125,8 @@
 }
 
 .custom-green-button {
-  background-color: green !important;
-  color: white !important;
+  background-color: #181717 !important;
+  color: #ffdb00 !important;
   margin-left: 5px;
 }
 
@@ -132,3 +134,13 @@
   border-radius: 20px;
 }
   
+.desc {
+  color: white;
+  overflow: hidden; /* Hides the overflow text */
+  text-overflow: ellipsis; /* Adds ellipsis at the end */
+  display: -webkit-box; /* Required for ellipsis */
+  -webkit-box-orient: vertical; /* Vertical box layout */
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  max-height: 4.5em; /* Adjust according to line-height */
+  line-height: 1.5em; /* Adjust for your line height */
+}

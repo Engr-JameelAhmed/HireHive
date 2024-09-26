@@ -1,7 +1,7 @@
-<div class="jobsPage">
+<div class="jobsPage"> 
   <div class="page">
-    <div class="card flex justify-content-center m-5" *ngFor="let job of jobs">
-      <mat-card class="custom-card">
+    <!-- <div class="card flex justify-content-center m-5" > -->
+      <mat-card class="custom-card" *ngFor="let job of jobs">
         <mat-card-header>
           <mat-card-title>{{ job.title }} <span> : </span> {{ job.companyName }}</mat-card-title>
         </mat-card-header>
@@ -17,5 +17,5 @@
         </mat-card-content>
       </mat-card>
     </div>
-  </div>
+  <!-- </div> -->
 </div>

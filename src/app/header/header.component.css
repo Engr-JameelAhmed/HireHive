@@ -1,13 +1,13 @@
 .container-fluid {
   display: flex;
-  margin-top: 10px;
-  padding: 0 20px; /* Adjust padding to fit the logo */
+  /* margin-top: 0px; */
+  padding: 0 10px; /* Adjust padding to fit the logo */
 }
 
 .logo {
   height: 50px; 
   width: auto; /* Maintain aspect ratio */
-  margin-left: 100px; /* Adjust margin as needed */
+  margin-left: 50px; /* Adjust margin as needed */
   transform: scale(2.2); /* Scale up by 1.5 times */
   transform-origin: left center; /* Adjust origin as needed */
 }
@@ -29,7 +29,7 @@
 }
 
 .collapse {
-  margin-right: 180px;
+  margin-right: 50px;
   padding: 10px;
   cursor: pointer;
 }

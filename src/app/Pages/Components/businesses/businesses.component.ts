@@ -69,12 +69,12 @@ export class BusinessesComponent implements OnInit {
   }
 
   // Method to trigger the file input click
-  triggerFileInput(businessId: number) {
-    const fileInput = document.getElementById(`fileInput_${businessId}`) as HTMLInputElement;
-    if (fileInput) {
-      fileInput.click();
-    }
-  }
+  // triggerFileInput(businessId: number) {
+  //   const fileInput = document.getElementById(`fileInput_${businessId}`) as HTMLInputElement;
+  //   if (fileInput) {
+  //     fileInput.click();
+  //   }
+  // }
 
   // Method to handle file selection
   onFileSelected(event: Event, businessId: number) {

@@ -4,20 +4,20 @@ body, html {
   padding: 0;
   height: 100%;
   width: 100%;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-x: hidden; 
+  overflow-y: auto; 
 }
 
-/* Background Image and Full Height */
 :host {
   display: block;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
   width: 100%;
-  position: relative; /* Positioning context for pseudo-element */
+  position: relative;
 }
 
 :host::before {
   content: '';
-  position: absolute;
+  position: fixed; /* Change to fixed to keep it in place */
   top: 0;
   left: 0;
   right: 0;
@@ -30,115 +30,63 @@ body, html {
   z-index: -1; /* Behind content */
 }
 
-/* Container for Content */
-.background-container {
+.main-container {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center vertically */
-  align-items: center; /* Center horizontally */
-  height: 100vh; /* Ensure full viewport height */
-  padding: 0; /* Remove extra padding */
-  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  justify-content: space-around; /* Space between sections */
+  align-items: center;
+  padding: 20px; /* Add padding to create space from the corners */
+  height: 100%; /* Allow the container to take full height */
+  position: relative; /* Ensure content is above the fixed background */
+  z-index: 1; /* Make sure the content is above the background */
 }
 
-/* Who Section */
-.who {
+.about, .who, .what {
   display: flex;
-  flex-direction: column;
-  margin: 0; /* Remove extra margin */
-  padding: 20px; /* Adjust padding */
-}
-
-.who h3 {
-  font-size: 30px;
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-.who2 {
-  background-color: bisque;
+  align-items: center;
+  justify-content: space-around;
+  margin: 20px;
+  width: 100%; 
+  max-width: 1000px; 
+  padding: 5px;
+  /* border: 1px solid red; */
+  background-color: rgba(44, 41, 41, 0.2);
   border-radius: 15px;
-  width: 550px;
-  height: auto; /* Adjust height based on content */
-  padding: 20px;
 }
 
-.who2 p {
-  font-weight: 400;
-  line-height: 1.8;
+.about-img img, .what-img img, .who-img img {
+  height: 210px;
+  width: 250px;
+  position: relative; /* Enable positioning for the pseudo-element */
+  z-index: 1; /* Ensure the image is above the blurred border */
 }
 
-/* What Section */
-.what {
-  display: flex;
-  flex-direction: column;
-  margin: 0; /* Remove extra margin */
-  padding: 20px; /* Adjust padding */
-  align-items: flex-end;
+.about-img::after, .what-img::after, .who-img::after {
+  content: '';
+  position: absolute;
+  border: 5px solid rgba(255, 255, 255, 0.9); /* White border with some transparency */
+  filter: blur(10px); /* Adjust the blur amount */
+  z-index: 0; /* Make sure the blurred border is below the image */
+  border-radius: 10px; /* Optional: round the corners */
 }
 
-.what h3 {
-  font-size: 30px;
-  font-weight: 600;
-  white-space: nowrap;
+
+/* .what {
+  justify-content: space-evenly; 
+} */
+
+.who-img {
+  margin-right: 20px;
 }
 
-.what2 {
-  background-color: bisque;
-  border-radius: 15px;
-  width: 550px;
-  height: auto; /* Adjust height based on content */
-  padding: 20px;
+.about-img, .who-img, .what-img {
+  margin-left: 20px; /* Space between text and images */
 }
 
-.what2 p {
-  font-weight: 400;
-  line-height: 1.8;
-}
-
-/* Responsive Design */
-@media only screen and (max-width: 650px) {
-  .who2, .what2 {
-    width: 500px; /* Adjust width for smaller screens */
-    padding: 15px;
-  }
-  
-  .what h3 {
-    font-size: 28px;
-    margin-right: 0; /* Remove margin-right */
-  }
-
-  .who h3 {
-    font-size: 28px;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .who2, .what2 {
-    width: 450px;
-    padding: 15px;
-  }
-  
-  .what h3 {
-    font-size: 26px;
-    margin-right: 0; /* Remove margin-right */
-  }
-}
-
-@media only screen and (max-width: 550px) {
-  .background-container {
-    padding: 10px; /* Adjust padding for smaller screens */
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .who2, .what2 {
-    width: 350px;
-    padding: 10px;
-  }
-
-  .what h3 {
-    font-size: 24px;
-    margin-right: 0; /* Remove margin-right */
-  }
+.about-content, .who-content, .what-content {
+  flex: 1; /* Allow content to take up remaining space */
+  max-width: 500px; /* Set a maximum width for the content */
+  margin: 0; /* Reset any default margin */
+  padding: 0; /* Reset any default padding */
+  /* Text will wrap naturally */
 }

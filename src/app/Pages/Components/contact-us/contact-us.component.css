@@ -39,9 +39,10 @@ body {
   padding: 40px;
   position: relative; /* Ensure content is above the background image */
   z-index: 1; /* Ensure content is above the background image */
+  line-height: 1.5;
 }
 
-.uper-region h1 {
+/* .uper-region h1 {
   font-size: 60px;
   font-weight: 700;
   margin-bottom: 45px;
@@ -50,8 +51,9 @@ body {
 .uper-region p {
   font-size: 25px;
   width: 40%;
-  line-height: 1.5;
-}
+  line-height: 1.5; 
+  align-items: center;
+} */
 
 .below-region {
   display: flex;
