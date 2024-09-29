@@ -104,7 +104,7 @@ export class SignUpComponent implements OnInit {
       case 'Investor':
         roleValue = 'ROLE_INVESTOR';
         break;
-      case 'BusinessOwner':
+      case 'Owner':
         roleValue = 'ROLE_BUSINESSOWNER';
         break;
       default:
